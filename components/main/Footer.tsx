@@ -8,6 +8,7 @@ import {
 } from "react-icons/rx";
 
 import { FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -51,6 +52,14 @@ const Footer = () => {
                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
                         <span className="text-[15px] ml-[6px]">mifwebchain@mjxlabs.com</span>    
                     </p>
+                </div>
+                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
+                    <div className="font-bold text-[16px]">Quick Links</div>
+                    <Link href="/services" className="text-[15px] cursor-pointer">Services</Link>
+                    <Link href="/case-studies" className="text-[15px] cursor-pointer">Case Studies</Link>
+                    <Link href="/about" className="text-[15px] cursor-pointer">About Us</Link>
+                    <Link href="/contact" className="text-[15px] cursor-pointer">Contact</Link>
+                    <Link href="/get-quote" className="text-[15px] cursor-pointer">Get a Quote</Link>
                 </div>
             </div>
 
