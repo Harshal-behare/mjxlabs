@@ -27,6 +27,9 @@ const Projects = () => {
           description="Innovative AI-driven solutions for smarter business decisions."
         />
       </div>
+      <a href="#case-studies" className="mt-6 py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]">
+        View Our Portfolio
+      </a>
     </div>
   );
 };

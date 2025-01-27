@@ -1,6 +1,11 @@
 # mjxlabs Portfolio
 This is a portfolio showcasing the work of mjxlabs, specializing in website development, mobile applications, and AI/ML solutions.
 
+## Home Page
+- **Header**: Logo on the top left and navigation links to Home, Services, Case Studies, About Us, Contact, and Get a Quote.
+- **Main Banner Section**: Headline and subheading describing your business, with primary and secondary CTA buttons linking to the Contact/Quote page and Case Studies, respectively.
+- **Key Value Propositions**: Highlight expertise, cost efficiency, and global reach, with a CTA button to view the portfolio.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -40,3 +45,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Mobile Navigation
 The website now features a responsive navbar for mobile devices. A hamburger menu icon appears on smaller screens, allowing users to toggle the visibility of the navbar links.
+
+## Services Page
+- **Custom Software Development**: Tailored software for business needs, including web apps, ERP, CRM, and SaaS using technologies like React, Node.js, and Python.
+- **Mobile App Development**: Native or cross-platform apps for iOS and Android, utilizing Swift, Kotlin, and Flutter.
+- **AI & Machine Learning Solutions**: Predictive analytics, chatbots, and NLP using TensorFlow and Scikit-learn.
+- **Cloud Solutions & DevOps**: Cloud migrations and CI/CD pipelines with AWS, Docker, and Kubernetes.
+- **E-commerce Solutions**: Scalable platforms using Shopify, Magento, WooCommerce, React, and Node.js.

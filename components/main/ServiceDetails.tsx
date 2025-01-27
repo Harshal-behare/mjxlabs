@@ -1,54 +1,57 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
-const services = [
-  {
+const serviceData = {
+  "custom-software-development": {
     title: "Custom Software Development",
     description: "Tailored software for business needs.",
     keyAreas: "Web apps, ERP, CRM, SaaS.",
     technologies: "React, Node.js, Python, etc.",
   },
-  {
+  "mobile-app-development": {
     title: "Mobile App Development",
     description: "Native or cross-platform apps.",
     keyAreas: "iOS, Android, E-commerce apps.",
     technologies: "Swift, Kotlin, Flutter, etc.",
   },
-  {
+  "ai-machine-learning-solutions": {
     title: "AI & Machine Learning Solutions",
     description: "Predictive analytics, chatbots, NLP, etc.",
     technologies: "TensorFlow, Scikit-learn, etc.",
   },
-  {
+  "cloud-solutions-devops": {
     title: "Cloud Solutions & DevOps",
     description: "Cloud migrations, CI/CD pipelines, etc.",
     technologies: "AWS, Docker, Kubernetes.",
   },
-  {
+  "e-commerce-solutions": {
     title: "E-commerce Solutions",
     description: "Scalable e-commerce platforms.",
     keyAreas: "Shopify, Magento, payment gateways.",
     technologies: "WooCommerce, React, Node.js.",
   },
-];
+};
 
-const Services = () => {
+const ServiceDetails = () => {
+  const router = useRouter();
+  const { service } = router.query;
+
+  const serviceInfo = serviceData[service as string];
+
+  if (!serviceInfo) {
+    return <div>Service not found</div>;
+  }
+
   return (
     <div className="py-20">
-      <h2 className="text-3xl font-bold text-center">Our Services</h2>
-      <p className="text-center mt-4">We offer a variety of services to help your business grow.</p>
-      <div className="flex flex-col items-center mt-8">
-        {services.map((service, index) => (
-          <Link key={index} href={`/services/${service.title.replace(/\s+/g, '-').toLowerCase()}`} className="border p-4 m-2 rounded-lg w-80 text-center hover:bg-gray-200">
-            <h3 className="text-xl font-semibold">{service.title}</h3>
-            <p>{service.description}</p>
-          </Link>
-        ))}
-      </div>
+      <h2 className="text-3xl font-bold text-center">{serviceInfo.title}</h2>
+      <p className="text-center mt-4">{serviceInfo.description}</p>
+      {serviceInfo.keyAreas && <p className="mt-2"><strong>Key Areas:</strong> {serviceInfo.keyAreas}</p>}
+      <p className="mt-2"><strong>Technologies:</strong> {serviceInfo.technologies}</p>
     </div>
   );
 };
 
-export default Services; 
+export default ServiceDetails; 

@@ -44,12 +44,23 @@ const HeroContent = () => {
         >
           Let's take your business to the next level with custom software solutions.
         </motion.p>
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Get a Free Consultation
-        </motion.a>
+        
+        <div className="flex gap-4">
+          <motion.a
+            variants={slideInFromLeft(1)}
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+            href="#get-quote"
+          >
+            Get a Free Consultation
+          </motion.a>
+          <motion.a
+            variants={slideInFromLeft(1)}
+            className="py-2 button-secondary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+            href="#case-studies"
+          >
+            See Our Work
+          </motion.a>
+        </div>
       </div>
 
       <motion.div
