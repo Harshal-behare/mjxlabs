@@ -1,52 +1,57 @@
-import React from "react";
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxLinkedinLogo,
-} from "react-icons/rx";
+"use client";
 
-import { FaYoutube } from "react-icons/fa";
+import React from "react";
+import { FaYoutube, FaDiscord, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
-      <table className="w-full">
-        <tbody>
-          <tr>
-            {/* Social Media Links */}
-            <td className="min-w-[200px] h-auto flex flex-col items-start justify-start mb-4">
-              <div className="font-bold text-[16px]">Community</div>
-              <p className="flex flex-row items-center my-[5px] cursor-pointer">
-                <FaYoutube />
-                <span className="text-[12px] ml-[6px]">Youtube</span>
-              </p>
-              <p className="flex flex-row items-center my-[5px] cursor-pointer">
-                <RxGithubLogo />
-                <span className="text-[12px] ml-[6px]">Github</span>
-              </p>
-              <p className="flex flex-row items-center my-[5px] cursor-pointer">
-                <RxDiscordLogo />
-                <span className="text-[12px] ml-[6px]">Discord</span>
-              </p>
-            </td>
+    <div className="w-full bg-gray-900 text-gray-200 shadow-lg p-6">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="mb-4">
+          <h2 className="font-bold text-lg">Community</h2>
+          <p className="flex items-center my-2 cursor-pointer">
+            <FaYoutube className="mr-2" />
+            <span>Youtube</span>
+          </p>
+          <p className="flex items-center my-2 cursor-pointer">
+            <FaInstagram className="mr-2" />
+            <span>Instagram</span>
+          </p>
+          <p className="flex items-center my-2 cursor-pointer">
+            <FaDiscord className="mr-2" />
+            <span>Discord</span>
+          </p>
+        </div>
 
-            {/* Quick Links */}
-            <td className="min-w-[200px] h-auto flex flex-col items-start justify-start mb-4">
-              <div className="font-bold text-[16px]">Quick Links</div>
-              <Link href="/services" className="text-[12px] cursor-pointer">Services</Link>
-              <Link href="/case-studies" className="text-[12px] cursor-pointer">Case Studies</Link>
-              <Link href="/about" className="text-[12px] cursor-pointer">About Us</Link>
-              <Link href="/contact" className="text-[12px] cursor-pointer">Contact</Link>
-              <Link href="/get-quote" className="text-[12px] cursor-pointer">Get a Quote</Link>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <div className="mb-4">
+          <h2 className="font-bold text-lg">Quick Links</h2>
+          <div className="flex flex-col">
+            <Link href="/services" className="my-2 cursor-pointer">Services</Link>
+            <Link href="/case-studies" className="my-2 cursor-pointer">Case Studies</Link>
+            <Link href="/about" className="my-2 cursor-pointer">About Us</Link>
+            <Link href="/contact" className="my-2 cursor-pointer">Contact</Link>
+            <Link href="/get-quote" className="my-2 cursor-pointer">Get a Quote</Link>
+          </div>
+        </div>
 
-      <div className="mb-[20px] text-[12px] text-center">
+        <div className="mb-4">
+          <h2 className="font-bold text-lg">Contact Us</h2>
+          <p>Phone: +1 234 567 890</p>
+          <p>Email: info@example.com</p>
+        </div>
+      </div>
+
+      <div className="text-center mt-4">
+        <h2 className="text-lg font-bold">Follow Us</h2>
+        <p>
+          <a href="#" className="text-blue-400 hover:underline">Facebook</a> | 
+          <a href="#" className="text-blue-400 hover:underline"> Twitter</a> | 
+          <a href="#" className="text-blue-400 hover:underline"> LinkedIn</a>
+        </p>
+      </div>
+
+      <div className="text-center mt-4 text-sm">
         &copy; mjxlabs 2025 Inc. All rights reserved
       </div>
     </div>

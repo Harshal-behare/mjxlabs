@@ -12,21 +12,20 @@ export default function GetQuotePage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log({ name, email, companyName, projectType, projectDetails, budgetRange });
   };
 
   return (
     <div className="py-20">
-      <h1 className="text-3xl font-bold text-center">Get a Quote</h1>
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
+      <h1 className="text-3xl font-bold text-center text-white">Get a Quote</h1>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 bg-gray-900 p-6 rounded-lg shadow-md">
         <div className="mb-4">
           <input
             type="text"
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
             required
           />
         </div>
@@ -36,7 +35,7 @@ export default function GetQuotePage() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
             required
           />
         </div>
@@ -46,7 +45,7 @@ export default function GetQuotePage() {
             placeholder="Company Name"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
             required
           />
         </div>
@@ -56,7 +55,7 @@ export default function GetQuotePage() {
             placeholder="Project Type"
             value={projectType}
             onChange={(e) => setProjectType(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
             required
           />
         </div>
@@ -65,7 +64,7 @@ export default function GetQuotePage() {
             placeholder="Project Details"
             value={projectDetails}
             onChange={(e) => setProjectDetails(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
             required
           />
         </div>
@@ -75,7 +74,7 @@ export default function GetQuotePage() {
             placeholder="Budget Range"
             value={budgetRange}
             onChange={(e) => setBudgetRange(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
             required
           />
         </div>

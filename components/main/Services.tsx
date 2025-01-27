@@ -36,15 +36,20 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="py-20">
-      <h2 className="text-3xl font-bold text-center">Our Services</h2>
-      <p className="text-center mt-4">We offer a variety of services to help your business grow.</p>
-      <div className="flex flex-col items-center mt-8">
+    <div className="py-20 bg-gray-900">
+      <h2 className="text-4xl font-bold text-center text-white">Our Services</h2>
+      <p className="text-center mt-4 text-gray-400">We offer a variety of services to help your business grow.</p>
+      <div className="flex flex-wrap justify-center mt-8">
         {services.map((service, index) => (
-          <Link key={index} href={`/services/${service.title.replace(/\s+/g, '-').toLowerCase()}`} className="border p-4 m-2 rounded-lg w-80 text-center hover:bg-gray-200">
-            <h3 className="text-xl font-semibold">{service.title}</h3>
-            <p>{service.description}</p>
-          </Link>
+          <div key={index} className="border border-gray-700 p-6 m-4 rounded-lg shadow-lg bg-gray-800 w-80 transition-transform transform hover:scale-105">
+            <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+            <p className="mt-2 text-gray-300">{service.description}</p>
+            {service.keyAreas && <p className="mt-2 text-gray-300"><strong>Key Areas:</strong> {service.keyAreas}</p>}
+            <p className="mt-2 text-gray-300"><strong>Technologies:</strong> {service.technologies}</p>
+            <Link href={`/services/${service.title.replace(/\s+/g, '-').toLowerCase()}`} className="mt-4 inline-block text-blue-400 hover:underline">
+              Learn More
+            </Link>
+          </div>
         ))}
       </div>
     </div>
