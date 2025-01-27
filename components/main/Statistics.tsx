@@ -1,17 +1,25 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 
-const StatisticCard = ({ title, target }) => {
+// Define the props type for StatisticCard
+type StatisticCardProps = {
+    title: string;
+    target: number;
+};
+
+const StatisticCard = ({ title, target }: StatisticCardProps) => {
     const [count, setCount] = useState(0);
     const [hasAnimated, setHasAnimated] = useState(false);
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        const currentRef = ref.current;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !hasAnimated) {
                     let start = 0;
-                    const end = parseInt(target);
+                    const end = target; // No need to parseInt since target is already a number
                     if (start === end) return;
 
                     let totalMilSecDur = 2000;
@@ -30,13 +38,13 @@ const StatisticCard = ({ title, target }) => {
             { threshold: 0.5 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [target, hasAnimated]);

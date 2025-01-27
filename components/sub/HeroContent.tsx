@@ -42,7 +42,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Let's take your business to the next level with custom software solutions.
+          Let&apos;s take your business to the next level with custom software solutions.
         </motion.p>
         
         <div className="flex gap-4">

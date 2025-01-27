@@ -3,7 +3,16 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-const serviceData = {
+// Define the type for the service data
+type ServiceInfo = {
+  title: string;
+  description: string;
+  keyAreas?: string;
+  technologies: string;
+};
+
+// Define the service data with a specific type
+const serviceData: Record<string, ServiceInfo> = {
   "custom-software-development": {
     title: "Custom Software Development",
     description: "Tailored software for business needs.",
@@ -38,7 +47,8 @@ const ServiceDetails = () => {
   const router = useRouter();
   const { service } = router.query;
 
-  const serviceInfo = serviceData[service as string];
+  // Ensure service is a string before using it as an index
+  const serviceInfo = typeof service === "string" ? serviceData[service] : undefined;
 
   if (!serviceInfo) {
     return <div>Service not found</div>;
