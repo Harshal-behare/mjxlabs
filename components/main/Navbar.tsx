@@ -39,23 +39,23 @@ const Navbar = () => {
         {/* Sidebar for mobile */}
         <div className={`fixed inset-0 bg-black bg-opacity-75 z-40 transition-opacity ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
           <div className={`flex flex-col items-center justify-center h-full transition-transform ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
-            <Link href="#hero" className="text-white text-lg py-2" onClick={toggleNavbar}>Home</Link>
-            <Link href="#services" className="text-white text-lg py-2" onClick={toggleNavbar}>Services</Link>
-            <Link href="#case-studies" className="text-white text-lg py-2" onClick={toggleNavbar}>Case Studies</Link>
-            <Link href="#about-us" className="text-white text-lg py-2" onClick={toggleNavbar}>About Us</Link>
-            <Link href="#contact" className="text-white text-lg py-2" onClick={toggleNavbar}>Contact</Link>
-            <Link href="#get-quote" className="text-white text-lg py-2" onClick={toggleNavbar}>Get a Quote</Link>
+            <Link href="/" className="text-white text-lg py-2" onClick={toggleNavbar}>Home</Link>
+            <Link href="/services" className="text-white text-lg py-2" onClick={toggleNavbar}>Services</Link>
+            <Link href="/case-studies" className="text-white text-lg py-2" onClick={toggleNavbar}>Case Studies</Link>
+            <Link href="/about" className="text-white text-lg py-2" onClick={toggleNavbar}>About Us</Link>
+            <Link href="/contact" className="text-white text-lg py-2" onClick={toggleNavbar}>Contact</Link>
+            <Link href="/get-quote" className="text-white text-lg py-2" onClick={toggleNavbar}>Get a Quote</Link>
           </div>
         </div>
 
         <div className={`md:flex ${isOpen ? "flex" : "hidden"} flex-col md:flex-row w-full md:w-auto h-full items-center justify-between md:mr-20`}>
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <Link href="#hero" className="cursor-pointer mr-4">Home</Link>
-            <Link href="#services" className="cursor-pointer mr-4">  Services</Link>
-            <Link href="#case-studies" className="cursor-pointer mr-4">  Case Studies</Link>
-            <Link href="#about-us" className="cursor-pointer mr-4">  About Us</Link>
-            <Link href="#contact" className="cursor-pointer mr-4">  Contact</Link>
-            <Link href="#get-quote" className="cursor-pointer mr-4">  Get a Quote</Link>
+            <Link href="/" className="cursor-pointer mr-4">Home</Link>
+            <Link href="/services" className="cursor-pointer mr-4">  Services</Link>
+            <Link href="/case-studies" className="cursor-pointer mr-4">  Case Studies</Link>
+            <Link href="/about" className="cursor-pointer mr-4">  About Us</Link>
+            <Link href="/contact" className="cursor-pointer mr-4">  Contact</Link>
+            <Link href="/get-quote" className="cursor-pointer mr-4">  Get a Quote</Link>
           </div>
         </div>
       </div>
