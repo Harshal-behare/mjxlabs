@@ -23,7 +23,7 @@ const CaseStudyCard: React.FC<CaseStudyProps> = ({ title, problem, solution, res
       {testimonial && (
         <>
           <h4 className="text-lg font-semibold text-gray-300 mt-2">Testimonial:</h4>
-          <p className="text-gray-400 italic">"{testimonial}"</p>
+          <p className="text-gray-400 italic">&quot;{testimonial}&quot;</p>
         </>
       )}
     </div>

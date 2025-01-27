@@ -30,7 +30,7 @@ export default function CaseStudiesPage() {
   return (
     <div className="py-20">
       <h1 className="text-3xl font-bold text-center text-white">Case Studies</h1>
-      <p className="text-center mt-4 text-gray-400">Explore our successful projects and the impact we've made.</p>
+      <p className="text-center mt-4 text-gray-400">Explore our successful projects and the impact we&apos;ve made.</p>
       <div className="max-w-4xl mx-auto mt-8">
         {caseStudies.map((caseStudy, index) => (
           <CaseStudyCard

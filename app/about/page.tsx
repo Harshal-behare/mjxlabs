@@ -29,17 +29,17 @@ const AboutPage = () => {
       <h2 className="text-2xl font-bold mt-10">Meet Our Team</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-white">John Doe</h3>
+          <h3 className="text-xl font-semibold text-white">Anuj Mahajan</h3>
           <p className="text-gray-400">CEO & Founder</p>
           <p className="text-gray-300 mt-2">Expert in software architecture and project management.</p>
         </div>
         <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-white">Jane Smith</h3>
+          <h3 className="text-xl font-semibold text-white">Mayur Agarwal</h3>
           <p className="text-gray-400">CTO</p>
           <p className="text-gray-300 mt-2">Specializes in AI and machine learning solutions.</p>
         </div>
         <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-white">Alice Johnson</h3>
+          <h3 className="text-xl font-semibold text-white">Harshal Behare</h3>
           <p className="text-gray-400">Lead Developer</p>
           <p className="text-gray-300 mt-2">Expert in full-stack development and cloud solutions.</p>
         </div>
