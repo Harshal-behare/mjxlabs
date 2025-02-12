@@ -18,6 +18,7 @@ export default function Header() {
         <Link href="#" className="hover:underline">Resources</Link>
         <Link href="#" className="hover:underline">For talent</Link>
         <Link href="/about" className="hover:underline">About us</Link>
+        <Link href="/contact" className="hover:underline">Contact Us</Link>
       </nav>
       <div className="relative">
         <Link href="/get-started" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
