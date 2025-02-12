@@ -5,7 +5,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen flex flex-col p-5">
-      <h1 className="text-3xl font-bold text-center mt-10">Turing Blog</h1>
+      <h1 className="text-3xl font-bold text-center mt-10">MJX LABS Blog</h1>
       <p className="text-center mt-4 text-gray-400">
         AI-powered, human-led stories to inspire business innovation and transformation.
       </p>

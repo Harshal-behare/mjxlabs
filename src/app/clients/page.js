@@ -2,7 +2,7 @@ export default function ClientsLogin() {
   return (
     <div className="flex items-center justify-center min-h-screen p-8 bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6">Sign in</h2>
+        <h2 className="text-2xl font-bold mb-6">Sign in to MJX LABS</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Email</label>
           <input

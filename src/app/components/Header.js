@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header className="flex justify-between items-center p-4 bg-black text-white">
-      <Link href="/" className="text-2xl font-bold">TURING</Link>
+      <Link href="/" className="text-2xl font-bold">MJX LABS</Link>
       <nav className="flex space-x-4">
         
         <div className="relative">
