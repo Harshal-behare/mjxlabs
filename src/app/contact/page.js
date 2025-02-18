@@ -53,7 +53,7 @@ const ContactUs = () => {
         <div className="mt-8 text-center">
           <h2 className="text-lg font-bold">Have general questions?</h2>
           <p className="text-gray-400">Check our FAQs</p>
-          <p className="text-gray-400">Customer support: support@turing.com</p>
+          <p className="text-gray-400">Customer support: support@mjxlabs.com</p>
         </div>
       </div>
       

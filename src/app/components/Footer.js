@@ -55,13 +55,13 @@ const Footer = () => {
       {/* Social Media Icons */}
       <div className="flex space-x-4 mt-4">
         <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <img src="/facebook-icon.svg" alt="Facebook" className="w-6 h-6" />
+          <img src="/facebook-icon.png" alt="Facebook" className="w-6 h-6" />
         </Link>
         <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <img src="/twitter-icon.svg" alt="Twitter" className="w-6 h-6" />
         </Link>
         <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-6 h-6" />
+          <img src="/linkedin-icon.png" alt="LinkedIn" className="w-6 h-6" />
         </Link>
         <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
           <img src="/instagram-icon.svg" alt="Instagram" className="w-6 h-6" />
