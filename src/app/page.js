@@ -7,8 +7,6 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-start justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        
-        {/* Hero Section */}
         <div className="relative w-full h-96">
           <Image src="/hero-image.webp" alt="Hero Image" layout="fill" objectFit="cover" className="rounded-lg" />
           <div className="absolute inset-0 flex flex-col items-start justify-center bg-black bg-opacity-50 text-white p-8">
@@ -71,7 +69,7 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-6">
-          <Link href="/case-studies" className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">View Our Portfolio</Link>
+          <Link href="/portfolio" className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">View Our Portfolio</Link>
         </div>
       </div>
     </>
