@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-start justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
         <div className="relative w-full h-96">
-          <Image src="/hero-image.webp" alt="Hero Image" layout="fill" objectFit="cover" className="rounded-lg" />
+          <Image src="/image2.webp" alt="Hero Image" layout="fill" objectFit="cover" className="rounded-lg" />
           <div className="absolute inset-0 flex flex-col items-start justify-center bg-black bg-opacity-50 text-white p-8">
             <h1 className="text-6xl font-extrabold">Turn AGI research into real-world impact</h1>
             <p className="mt-4 text-xl">Advance AI from research to enterprise scale. Deliver measurable outcomes with cutting-edge intelligence.</p>

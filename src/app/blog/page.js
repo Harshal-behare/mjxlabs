@@ -1,29 +1,45 @@
 "use client";
 
 import React from "react";
+import BlogPost from "./BlogPost"; // Import the new BlogPost component
 
 const Blog = () => {
+  const posts = [
+    {
+      image: "/blog1.jpeg",
+      title: "Turing Achieves 3x ARR Growth, Profitability, and AI Scaling in 2024",
+      description: "Turing AGI Icons 3: Advancing AI with Jeff Dean and Gemini 2.0",
+      author: "Abigail Dawson",
+    },
+    {
+      image: "/blog2.png",
+      title: "OpenAI's Latest Model: A Fresh Perspective on Coding with AI",
+      description: "Insights from AI leaders on the latest advancements.",
+      author: "John Doe",
+    },
+    {
+      image: "/blog3.png",
+      title: "Exploring the Future of AI: Trends and Predictions",
+      description: "A deep dive into the future landscape of artificial intelligence.",
+      author: "Jane Smith",
+    },
+  ];
+
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col p-5">
-      <h1 className="text-3xl font-bold text-center mt-10">MJX LABS Blog</h1>
-      <p className="text-center mt-4 text-gray-400">
-        AI-powered, human-led stories to inspire business innovation and transformation.
-      </p>
+    <div className="bg-black text-white min-h-screen flex flex-col p-5">
       
-      <div className="mt-10">
+      
+      <div className="mt-2">
         <div className="flex flex-col items-center">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-3xl">
-            <h2 className="text-xl font-bold">Turing Achieves 3x ARR Growth, Profitability, and AI Scaling in 2024</h2>
-            <p className="mt-2 text-gray-400">Turing AGI Icons 3: Advancing AI with Jeff Dean and Gemini 2.0</p>
-            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Read more</button>
-          </div>
-          {/* Repeat similar blocks for other blog posts */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-3xl mt-4">
-            <h2 className="text-xl font-bold">OpenAI's Latest Model: A Fresh Perspective on Coding with AI</h2>
-            <p className="mt-2 text-gray-400">Insights from AI leaders on the latest advancements.</p>
-            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Read more</button>
-          </div>
-          {/* Add more blog post blocks as needed */}
+          {posts.map((post, index) => (
+            <BlogPost 
+              key={index} 
+              image={post.image} 
+              title={post.title} 
+              description={post.description} 
+              author={post.author}
+            />
+          ))}
         </div>
       </div>
 

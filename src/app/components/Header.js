@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="flex justify-between items-center p-4 bg-black text-white">
-      <Link href="/" className="text-2xl font-bold">MJX LABS</Link>
+      <Link href="/" className="text-2xl font-bold ml-30">MJX LABS</Link>
       <nav className="flex space-x-4">
         
         <div className="relative">
@@ -59,23 +59,23 @@ export default function Header() {
             </div>
           )}
         </div>
-        <div className="relative">
-          <button onClick={() => toggleDropdown('resources')} className="hover:underline">Resources</button>
-          {openDropdown === 'resources' && (
-            <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg">
-              <ul className="py-2">
-                <li className="px-4 py-2 hover:bg-gray-700">
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-700">
-                  <Link href="/more-resources">More Resources</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-700">
-                  <Link href="/contact">Contact Us</Link>
-                </li>
-              </ul>
-            </div>
-          )}
+        <div className="relative group">
+          <button className="hover:underline">
+            Resources
+          </button>
+          <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ul className="py-2">
+              <li className="px-4 py-2 hover:bg-gray-700">
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-700">
+                <Link href="/docs">Docs</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-700">
+                <Link href="/changelog">Changelog</Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <Link href="/about" className="hover:underline">About us</Link>
         <Link href="/contact" className="hover:underline">Contact Us</Link>
