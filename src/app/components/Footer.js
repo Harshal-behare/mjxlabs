@@ -27,7 +27,7 @@ const Footer = () => {
           <ul className="mt-2">
             <li><Link href="/about" className="hover:underline">About Us</Link></li>
             <li><Link href="#" className="hover:underline">Careers</Link></li>
-            <li><Link href="#" className="hover:underline">Blog</Link></li>
+            <li><Link href="/blog" className="hover:underline">Blog</Link></li>
             <li><Link href="/contact" className="hover:underline">Contact</Link></li>
           </ul>
         </div>

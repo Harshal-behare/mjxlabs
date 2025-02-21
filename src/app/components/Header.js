@@ -6,8 +6,7 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center p-4 bg-black text-white">
       <Link href="/" className="text-xl font-bold px-20 ml-8">MJX LABS</Link>
-      <nav className="flex space-x-4">
-        
+      <nav className="flex space-x-4 gap-2 mr-10">
         <div className="relative group">
           <button className="hover:underline">What we do</button>
           <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -58,9 +57,7 @@ export default function Header() {
               <li className="px-4 py-2 hover:bg-gray-700">
                 <Link href="/more-resources">More Resources</Link>
               </li>
-              <li className="px-4 py-2 hover:bg-gray-700">
-                <Link href="/contact">Contact Us</Link>
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -68,15 +65,15 @@ export default function Header() {
         <Link href="/about" className="hover:underline">About us</Link>
         <Link href="/contact" className="hover:underline">Contact Us</Link>
       </nav>
-      <div className="relative px-12 flex justify-between items-center gap-1">
-      <button className="bg-gray-700 text-sm px-2 py-1 rounded-3xl hover:bg-gray-600 border-slate-400 border-2">
+      {/* <div className="relative px-12 flex justify-between items-center gap-1">
+      <Link href="/login" className="bg-gray-700 text-sm px-2 py-1 rounded-3xl hover:bg-gray-600 border-slate-400 border-2">
           SIGN IN
-        </button>
+        </Link>
         <Link href="/get-started" className="bg-blue-500 text-white text-sm px-4 py-1 rounded-3xl border-slate-400 hover:bg-blue-600 border-2">
           GET STARTED
         </Link>
        
-      </div>
+      </div> */}
     </header>
   );
 } 
