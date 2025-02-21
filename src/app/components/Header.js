@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="flex justify-between items-center p-4 bg-black text-white">
-      <Link href="/" className="text-2xl font-bold ml-30">MJX LABS</Link>
+      <Link href="/" className="text-2xl font-bold ml-30 px-20">MJX LABS</Link>
       <nav className="flex space-x-4">
         
         <div className="relative group">
@@ -68,11 +68,11 @@ export default function Header() {
         <Link href="/about" className="hover:underline">About us</Link>
         <Link href="/contact" className="hover:underline">Contact Us</Link>
       </nav>
-      <div className="relative">
-        <Link href="/get-started" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      <div className="relative px-12">
+        <Link href="/get-started" className="bg-blue-500 text-white px-4 py-2 rounded-3xl hover:bg-blue-600">
           Get Started
         </Link>
-        <button className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600 ml-2">
+        <button className="bg-gray-700 text-white px-4 py-2 rounded-3xl hover:bg-gray-600 ml-2">
           Login
         </button>
       </div>
