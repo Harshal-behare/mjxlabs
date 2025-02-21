@@ -16,19 +16,19 @@ const Footer = () => {
         <div className="flex flex-col mb-6">
           <h4 className="font-bold text-lg">Product</h4>
           <ul className="mt-2">
-            <li><Link href="#" className="hover:underline">Features</Link></li>
-            <li><Link href="#" className="hover:underline">Security</Link></li>
-            <li><Link href="#" className="hover:underline">Mobile App</Link></li>
-            <li><Link href="#" className="hover:underline">Pricing</Link></li>
+            <li><Link href="#" className="hover:text-blue-500">Features</Link></li>
+            <li><Link href="#" className="hover:text-blue-500">Security</Link></li>
+            <li><Link href="#" className="hover:text-blue-500">Mobile App</Link></li>
+            <li><Link href="#" className="hover:text-blue-500">Pricing</Link></li>
           </ul>
         </div>
         <div className="flex flex-col mb-6">
           <h4 className="font-bold text-lg">Company</h4>
           <ul className="mt-2">
-            <li><Link href="/about" className="hover:underline">About Us</Link></li>
-            <li><Link href="#" className="hover:underline">Careers</Link></li>
-            <li><Link href="/blog" className="hover:underline">Blog</Link></li>
-            <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+            <li><Link href="/about" className="hover:text-blue-500">About Us</Link></li>
+            <li><Link href="#" className="hover:text-blue-500">Careers</Link></li>
+            <li><Link href="/blog" className="hover:text-blue-500">Blog</Link></li>
+            <li><Link href="/contact" className="hover:text-blue-500">Contact</Link></li>
           </ul>
         </div>
         <div className="flex flex-col mb-6">
@@ -38,9 +38,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded border border-gray-600 text-black"
+              className="p-2 rounded-lg border border-gray-600 text-black"
             />
-            <button className="mt-2 md:mt-0 md:ml-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            <button className="mt-2 md:mt-0 md:ml-2 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">
               Subscribe
             </button>
           </div>
@@ -51,8 +51,8 @@ const Footer = () => {
       <div className="flex justify-between items-center mt-4">
         <div className="text-sm">copyright © 2025 MJX LABS. All rights reserved.</div>
         <div className="flex space-x-4">
-          <Link href="/terms-of-service" className="hover:underline">Terms of Service</Link>
-          <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+          <Link href="/terms-of-service" className="hover:text-blue-500">Terms of Service</Link>
+          <Link href="/privacy-policy" className="hover:text-blue-500">Privacy Policy</Link>
         </div>
         
         <div className="flex space-x-4 ">
