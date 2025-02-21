@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-black text-white px-20">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start mt-4">
         {/* Logo and Tagline Section */}
         <div className="flex flex-col mb-6">
           <img src="/logo.svg" alt="Logo" className="w-24 h-auto mb-2" />
@@ -55,7 +55,7 @@ const Footer = () => {
           <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
         </div>
         
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 ">
           
           {/* twitter logo */}
           <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">

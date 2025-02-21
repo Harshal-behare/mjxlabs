@@ -5,10 +5,10 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="flex justify-between items-center p-4 bg-black text-white">
-      <Link href="/" className="text-xl font-bold px-20 ml-8">MJX LABS</Link>
+      <Link href="/" className="text-xl font-bold px-20 ml-2">MJX LABS</Link>
       <nav className="flex space-x-4 gap-2 mr-10">
         <div className="relative group">
-          <button className="hover:underline">What we do</button>
+          <button className="hover:">What we do</button>
           <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <ul className="py-2">
               <li className="px-4 py-2 hover:bg-gray-700">
@@ -31,7 +31,7 @@ export default function Header() {
         </div>
 
         <div className="relative group">
-          <button className="hover:underline">For talent</button>
+          <button className="hover:">For talent</button>
           <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <ul className="py-2">
               <li className="px-4 py-2 hover:bg-gray-700">
@@ -48,7 +48,7 @@ export default function Header() {
         </div>
 
         <div className="relative group">
-          <button className="hover:underline">Resources</button>
+          <button className="hover:">Resources</button>
           <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <ul className="py-2">
               <li className="px-4 py-2 hover:bg-gray-700">
@@ -62,8 +62,8 @@ export default function Header() {
           </div>
         </div>
 
-        <Link href="/about" className="hover:underline">About us</Link>
-        <Link href="/contact" className="hover:underline">Contact Us</Link>
+        <Link href="/about" className="hover:text-blue-500">About us</Link>
+        <Link href="/contact" className="hover:text-blue-500">Contact Us</Link>
       </nav>
       {/* <div className="relative px-12 flex justify-between items-center gap-1">
       <Link href="/login" className="bg-gray-700 text-sm px-2 py-1 rounded-3xl hover:bg-gray-600 border-slate-400 border-2">
