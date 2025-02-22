@@ -5,8 +5,8 @@ import React from 'react';
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-start justify-center min-h-screen p-8 pb-12 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        
+      <div className="flex flex-col items-start bg-black justify-center min-h-screen p-8 pb-12 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+
         <div className=" flex items-center justify-center bg-black text-white p-20 pl-0">
           <div className="max-w-4xl mx-auto p-2">
             <div className="flex flex-col md:flex-row items-center">
@@ -15,33 +15,32 @@ export default function Home() {
               </div>
               <div className="flex-1">
                 <h1 className="text-5xl font-bold mb-4">
-                  Turn AGI research into  <br /> real-world impact
+                Empowering Businesses with   <br /> AI Innovation
                 </h1>
                 <p className="text-lg mb-6">
-                  Advance AI from research to enterprise scale. Deliver measurable outcomes with cutting-edge intelligence.
+                From research to real-world implementation, we develop AI-driven solutions that enhance efficiency, scalability, and profitability.
                 </p>
                 <Link href="/get-started" className="inline-block bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
-                  Get started →
+                  Get Started →
                 </Link>
               </div>
-
             </div>
           </div>
         </div>
 
         {/* Key Value Propositions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full">
-          <div className="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border border-gray-700/50 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600">Expertise</h2>
-            <p className="mt-4 text-gray-400 leading-relaxed">Industry experts with years of experience.</p>
+          <div className="p-8 bg-black rounded-xl shadow-2xl  transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border-2 border-white backdrop-blur-sm">
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Cutting-Edge Expertise</h2>
+            <p className="mt-4 text-gray-400 leading-relaxed">Industry leaders in AI research & enterprise deployment</p>
           </div>
-          <div className="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border border-gray-700/50 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600">Cost Efficiency</h2>
-            <p className="mt-4 text-gray-400 leading-relaxed">High-quality solutions at competitive prices.</p>
+          <div className="p-8 bg-black rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border-2 border-white backdrop-blur-sm">
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Affordable & Scalable</h2>
+            <p className="mt-4 text-gray-400 leading-relaxed">Cost-effective AI solutions for businesses of all sizes</p>
           </div>
-          <div className="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border border-gray-700/50 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600">Global Reach</h2>
-            <p className="mt-4 text-gray-400 leading-relaxed">Services available worldwide for accessibility.</p>
+          <div className="p-8 bg-black rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border-2 border-white backdrop-blur-sm">
+            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Global AI Integration</h2>
+            <p className="mt-4 text-gray-400 leading-relaxed">AI solutions accessible & adaptable across industries worldwide</p>
           </div>
         </div>
 

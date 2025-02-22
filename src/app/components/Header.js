@@ -4,8 +4,11 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center p-4 bg-black text-white">
-      <Link href="/" className="text-xl font-bold px-20 ml-2">MJX LABS</Link>
+    <header className="flex justify-between items-center p-4 bg-black text-white border-b-2 border-blue-600 to via-violet-500  shadow-2xl transition-all duration-300 hover:shadow-indigo-500/20  backdrop-blur-sm">
+       <div className="flex items-center justify-between">
+       <img src="/OnlyLogo.png" alt="Logo" className="h-10 w-10 inline shadow-2xl" />
+       <Link href="/" className="text-xl font-bold pt-2">MJX LABS</Link>
+      </div>
       <nav className="flex space-x-4 gap-2 mr-10">
         <div className="relative group">
           <button className="hover:">What we do</button>
@@ -47,21 +50,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="relative group">
-          <button className="hover:">Resources</button>
-          <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <ul className="py-2">
-              <li className="px-4 py-2 hover:bg-gray-700">
-                <Link href="/blog">Blog</Link>
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-700">
-                <Link href="/more-resources">More Resources</Link>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-
+        <Link href="/blog" className="hover:text-blue-500">Blog</Link>
         <Link href="/about" className="hover:text-blue-500">About us</Link>
         <Link href="/pricing" className="hover:text-blue-500">Pricing</Link>
         <Link href="/contact" className="hover:text-blue-500">Contact Us</Link>

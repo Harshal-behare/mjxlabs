@@ -14,7 +14,7 @@ const About = () => {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-            AI Powered, Human Led
+            AI Solutions Driven by Innovation & Human Expertise
           </h1>
           <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             MJX LABS is a combination of internal experts, global talent, and superior AI technology working together to build innovative companies and teams better.

@@ -6,10 +6,10 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-black text-white px-20">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start mt-4">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
         {/* Logo and Tagline Section */}
         <div className="flex flex-col mb-6">
-          <img src="/logo.svg" alt="Logo" className="w-24 h-auto mb-2" />
+          <img src="/OnlyLogo.png" alt="Logo" className="w-24 h-auto mb-2" />
           <h2 className="text-base font-bold">MJX LABS</h2>
           <p className="text-sm text-gray-400">We build your dreams</p>
         </div>
