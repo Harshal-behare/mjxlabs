@@ -13,7 +13,7 @@ export default function Header() {
       </div>
       <nav className="flex items-center space-x-6">
         <div className="relative group">
-          <button className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-white">
+          <button className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-blue-600">
             What we do
           </button>
           <div className="absolute left-0 mt-2 w-56 bg-gray-900/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
@@ -38,7 +38,7 @@ export default function Header() {
         </div>
 
         <div className="relative group">
-          <button className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-white">
+          <button className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-blue-600">
             For talent
           </button>
           <div className="absolute left-0 mt-2 w-56 bg-gray-900/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
@@ -56,10 +56,10 @@ export default function Header() {
           </div>
         </div>
 
-        <Link href="/blog" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-white">Blog</Link>
-        <Link href="/about" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-white">About us</Link>
-        <Link href="/pricing" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-white">Pricing</Link>
-        <Link href="/contact" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-white">Contact Us</Link>
+        <Link href="/blog" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-blue-600">Blog</Link>
+        <Link href="/about" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-blue-600">About us</Link>
+        <Link href="/pricing" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-blue-600">Pricing</Link>
+        <Link href="/contact" className="px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors text-gray-300 hover:text-blue-600">Contact Us</Link>
       </nav>
     </header>
   );

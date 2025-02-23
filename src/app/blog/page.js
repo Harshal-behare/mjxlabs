@@ -26,7 +26,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col p-5">
+    <div className="bg-black text-white min-h-screen flex flex-col p-14">
       
       
       <div className="mt-2">
