@@ -70,7 +70,7 @@ const Capabilities = () => {
         </div>
 
         {/* Project Section */}
-        <div className="flex items-center justify-between mt-16 bg-gray-800 p-6 rounded-lg">
+        <div className="flex items-center justify-between mt-16 bg-transparent p-6 rounded-lg">
           <div>
             <h2 className="text-2xl font-bold text-blue-400">Have a project in mind?</h2>
             <h3 className="text-lg text-white">Let's Connect</h3>

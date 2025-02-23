@@ -24,7 +24,7 @@ const ContactUs = () => {
                 <label className="block text-gray-400 text-sm mb-2">Full Name</label>
                 <input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Narayan rav"
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                 />
               </div>
@@ -71,9 +71,9 @@ const ContactUs = () => {
                 Office Location
               </h3>
               <p className="mt-2 text-gray-400">
-                123 Innovation Street<br />
-                Tech Valley, CA 94043<br />
-                United States
+                123 khau gali<br />
+                Pune , 411037<br />
+                India
               </p>
             </div>
 
@@ -93,9 +93,9 @@ const ContactUs = () => {
                 Follow Us
               </h3>
               <div className="mt-2 space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                <a href="https://linkedin.com" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://x.com" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                <a href="https://github.com" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
               </div>
             </div>
           </div>

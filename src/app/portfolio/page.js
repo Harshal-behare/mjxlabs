@@ -3,43 +3,43 @@ import React from 'react';
 const Portfolio = () => {
   return (
     <div className="p-8 bg-gray-900 text-white min-h-screen">
-      <h1 className="text-4xl font-bold mb-6">Turing AGI Advancement</h1>
+      <h1 className="text-4xl font-bold mb-6">My Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">LLM evaluation</h2>
-          <p className="mt-2 text-gray-400">Comprehensive model performance, accuracy, and scalability assessment.</p>
+          <h2 className="text-2xl font-bold">Project Alpha</h2>
+          <p className="mt-2 text-gray-400">A cutting-edge AI solution for data analysis.</p>
         </div>
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">LLM training</h2>
-          <p className="mt-2 text-gray-400">LLM reasoning, coding, and knowledge improvement with proprietary human data.</p>
+          <h2 className="text-2xl font-bold">Project Beta</h2>
+          <p className="mt-2 text-gray-400">An innovative mobile app for e-commerce.</p>
         </div>
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">Multimodality</h2>
-          <p className="mt-2 text-gray-400">Integrate text, images, and videos for human-like intelligence.</p>
+          <h2 className="text-2xl font-bold">Project Gamma</h2>
+          <p className="mt-2 text-gray-400">A comprehensive cloud solution for businesses.</p>
         </div>
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">LLM factuality</h2>
-          <p className="mt-2 text-gray-400">Advanced fact verification, bias detection, and source credibility assessment.</p>
+          <h2 className="text-2xl font-bold">Project Delta</h2>
+          <p className="mt-2 text-gray-400">Advanced AI-driven marketing strategies.</p>
         </div>
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">LLM alignment & safety</h2>
-          <p className="mt-2 text-gray-400">Bias mitigation, RLHF integration, safety protocols, and more.</p>
+          <h2 className="text-2xl font-bold">Project Epsilon</h2>
+          <p className="mt-2 text-gray-400">Innovative solutions for sustainable energy.</p>
         </div>
       </div>
 
-      <h1 className="text-4xl font-bold mt-12 mb-6">Turing Intelligence</h1>
+      <h1 className="text-4xl font-bold mt-12 mb-6">Additional Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">Generative AI</h2>
-          <p className="mt-2 text-gray-400">Customizable genAI products and solutions for the enterprise.</p>
+          <h2 className="text-2xl font-bold">Project Zeta</h2>
+          <p className="mt-2 text-gray-400">Customizable AI solutions for healthcare.</p>
         </div>
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">AI/Data</h2>
-          <p className="mt-2 text-gray-400">Accelerated AI adoption, optimized ML operations, and more.</p>
+          <h2 className="text-2xl font-bold">Project Eta</h2>
+          <p className="mt-2 text-gray-400">Optimized machine learning operations.</p>
         </div>
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-2xl font-bold">Custom engineering</h2>
-          <p className="mt-2 text-gray-400">Application development, cloud migration, and other solutions.</p>
+          <h2 className="text-2xl font-bold">Project Theta</h2>
+          <p className="mt-2 text-gray-400">Application development and cloud migration.</p>
         </div>
       </div>
     </div>
