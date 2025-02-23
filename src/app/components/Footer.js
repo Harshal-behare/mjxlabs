@@ -17,7 +17,9 @@ const Footer = () => {
         {/* Logo and Tagline Section */}
         <div className="space-y-4">
           <img src="/OnlyLogo.png" alt="Logo" className="w-24 h-auto" />
-          <h2 className="text-xl font-bold">MJX LABS</h2>
+          <Link href="/" className="text-xl font-bold text-white hover:text-blue-600  ">
+          MJX LABS
+        </Link>
           <p className="text-gray-400">We build your dreams</p>
         </div>
 
@@ -25,10 +27,10 @@ const Footer = () => {
         <div className="space-y-4">
           <h4 className="text-lg font-bold">Product</h4>
           <ul className="space-y-2">
-            <li><Link href="#" className="hover:text-blue-500 transition-colors">Features</Link></li>
-            <li><Link href="#" className="hover:text-blue-500 transition-colors">Security</Link></li>
-            <li><Link href="#" className="hover:text-blue-500 transition-colors">Mobile App</Link></li>
-            <li><Link href="#" className="hover:text-blue-500 transition-colors">Pricing</Link></li>
+            <li><Link href="/feature" className="hover:text-blue-500 transition-colors">Features</Link></li>
+            <li><Link href="/security" className="hover:text-blue-500 transition-colors">Security</Link></li>
+            <li><Link href="/mobile-app" className="hover:text-blue-500 transition-colors">Mobile App</Link></li>
+            <li><Link href="/pricing" className="hover:text-blue-500 transition-colors">Pricing</Link></li>
           </ul>
         </div>
 
@@ -37,7 +39,7 @@ const Footer = () => {
           <h4 className="text-lg font-bold">Company</h4>
           <ul className="space-y-2">
             <li><Link href="/about" className="hover:text-blue-500 transition-colors">About Us</Link></li>
-            <li><Link href="#" className="hover:text-blue-500 transition-colors">Careers</Link></li>
+            <li><Link href="/careers" className="hover:text-blue-500 transition-colors">Careers</Link></li>
             <li><Link href="/blog" className="hover:text-blue-500 transition-colors">Blog</Link></li>
             <li><Link href="/contact" className="hover:text-blue-500 transition-colors">Contact</Link></li>
           </ul>
