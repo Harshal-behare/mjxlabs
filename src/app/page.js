@@ -30,15 +30,15 @@ export default function Home() {
 
         {/* Key Value Propositions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full">
-          <div className="p-8 bg-black rounded-xl  transition-all duration-300 hover:scale-105 hover:shadow-slate-100 hover:shadow-xl border-2 border-white backdrop-blur-sm">
+          <div className="p-8 bg-black rounded-xl  transition-all duration-300 hover:scale-105 hover:shadow-slate-500 shadow-xl border border-white backdrop-blur-sm">
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Cutting-Edge Expertise</h2>
             <p className="mt-4 text-gray-400 leading-relaxed">Industry leaders in AI research & enterprise deployment</p>
           </div>
-          <div className="p-8 bg-black rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border-2 border-white backdrop-blur-sm">
+          <div className="p-8 bg-black rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500 border border-white backdrop-blur-sm">
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Affordable & Scalable</h2>
             <p className="mt-4 text-gray-400 leading-relaxed">Cost-effective AI solutions for businesses of all sizes</p>
           </div>
-          <div className="p-8 bg-black rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 border-2 border-white backdrop-blur-sm">
+          <div className="p-8 bg-black rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-indigo-500 border border-white backdrop-blur-sm">
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Global AI Integration</h2>
             <p className="mt-4 text-gray-400 leading-relaxed">AI solutions accessible & adaptable across industries worldwide</p>
           </div>
