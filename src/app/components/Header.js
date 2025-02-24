@@ -72,7 +72,7 @@ export default function Header() {
           onMouseEnter={() => handleMouseEnter('for-talent')}
           onMouseLeave={handleMouseLeave}
         >
-          <button className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${(isActive('/for-talent') || isChildActive('/how-to-get-hired') || isChildActive('/developer-resources') || isChildActive('/talent-support')) ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>
+          <button className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${(isActive('/for-talent') || isChildActive('/fortalent') ) ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>
             For Talent
           </button>
           <div className={`absolute left-0 mt-2 w-56 bg-gray-900/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-2xl transition-opacity duration-200 ${
@@ -80,13 +80,13 @@ export default function Header() {
           }`}>
             <ul className="py-2">
               <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
-                <Link href="/how-to-get-hired" className={`block ${isActive('/how-to-get-hired') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>How to get hired</Link>
+                <Link href="/fortalent/how-to-get-hired" className={`block ${isActive('/fortalent/how-to-get-hired') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>How to get hired</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
-                <Link href="/developer-resources" className={`block ${isActive('/developer-resources') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Developer resources</Link>
+                <Link href="/fortalent/developer-resources" className={`block ${isActive('/fortalent/developer-resources') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Developer resources</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
-                <Link href="/talent-support" className={`block ${isActive('/talent-support') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Talent support</Link>
+                <Link href="/fortalent/talent-support" className={`block ${isActive('/fortalent/talent-support') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Talent support</Link>
               </li>
             </ul>
           </div>

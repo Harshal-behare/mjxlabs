@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center mt-8 text-sm text-gray-400">
+      <div className="text-center mt-8 text-sm pl-16 text-gray-400">
         Made with Passion and MJXLABS
       </div>
     </footer>
