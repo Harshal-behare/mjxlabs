@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-2 shadow-md hover:shadow-blue-400 bg-black/90 backdrop-blur-lg border-b border-blue-600">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-1 shadow-md hover:shadow-blue-400 bg-black/90 backdrop-blur-lg border-b border-blue-600">
       <div className="flex items-center space-x-3">
         <img src="/OnlyLogo.png" alt="Logo" className="h-10 w-10 rounded-lg shadow-lg hover:scale-105 transition-transform" />
         <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-700 transition-all">
@@ -42,7 +42,7 @@ export default function Header() {
           onMouseLeave={handleMouseLeave}
         >
           <button className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${(isActive('/what-we-do') || isChildActive('/services')) ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>
-            What we do
+            Services
           </button>
           <div className={`absolute left-0 mt-2 w-56 bg-gray-900/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-2xl transition-opacity duration-200 ${
             hoveredMenu === 'what-we-do' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -73,7 +73,7 @@ export default function Header() {
           onMouseLeave={handleMouseLeave}
         >
           <button className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${(isActive('/for-talent') || isChildActive('/how-to-get-hired') || isChildActive('/developer-resources') || isChildActive('/talent-support')) ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>
-            For talent
+            For Talent
           </button>
           <div className={`absolute left-0 mt-2 w-56 bg-gray-900/95 backdrop-blur-lg border border-gray-800 rounded-lg shadow-2xl transition-opacity duration-200 ${
             hoveredMenu === 'for-talent' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'

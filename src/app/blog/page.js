@@ -6,19 +6,19 @@ import BlogPost from "./BlogPost"; // Import the new BlogPost component
 const Blog = () => {
   const posts = [
     {
-      image: "/blog1.jpeg",
+      image: "/blog/blog1.jpeg",
       title: "Turing Achieves 3x ARR Growth, Profitability, and AI Scaling in 2024",
       description: "Turing AGI Icons 3: Advancing AI with Jeff Dean and Gemini 2.0",
       author: "Abigail Dawson",
     },
     {
-      image: "/blog2.png",
+      image: "/blog/blog2.png",
       title: "OpenAI's Latest Model: A Fresh Perspective on Coding with AI",
       description: "Insights from AI leaders on the latest advancements.",
       author: "John Doe",
     },
     {
-      image: "/blog3.png",
+      image: "/blog/blog3.png",
       title: "Exploring the Future of AI: Trends and Predictions",
       description: "A deep dive into the future landscape of artificial intelligence.",
       author: "Jane Smith",
