@@ -20,7 +20,7 @@ export default function Home() {
                 <p className="text-lg mb-6">
                 From research to real-world implementation, we develop AI-driven solutions that enhance efficiency, scalability, and profitability.
                 </p>
-                <Link href="/get-started" className="inline-block bg-gradient-to-r from-orange-500 to-yellow-500 text-black   px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                <Link href="/get-started" className="inline-block bg-gradient-to-r from-orange-500 to-yellow-500 text-black   px-10 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                   Get Started →
                 </Link>
               </div>
