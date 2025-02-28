@@ -1,335 +1,280 @@
-"use client";
+'use client';
 
-import React from 'react';
-import Head from 'next/head';
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 
-const FrontendDevelopmentPage = () => {
+export default function FrontendDevelopmentPage() {
   return (
-    <div className="frontend-page">
-    
+    <div className="bg-black text-white min-h-screen">
       {/* Hero Section */}
-      <section className="hero-section frontend-page">
-        <div className="container">
-          <h1 className="hero-title">Frontend Development</h1>
-          <p className="hero-subtitle">
-          Build Modern, Responsive, And User-Friendly Web Interfaces With Our Expertise In Frontend Technologies
-          </p>
+      <section className="py-16 px-4 max-w-6xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Frontend Development</h1>
+        <p className="text-lg mx-auto max-w-3xl mb-12">
+          Build Beautiful, Responsive, And User-Friendly Web Interfaces With Our Expertise In Modern Technologies
+        </p>
+        
+        {/* Our Methodology */}
+        <div className="mt-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-10 text-left">Our Methodology For Creating Intuitive And Responsive Front-End Interfaces</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Requirement Analysis */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-blue-500 transition-all">
+              <div className="flex items-start mb-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-bold">1</span>
+                </div>
+                <h3 className="text-xl font-bold">Requirement Analysis</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Understanding the client's design needs, user needs, and business objectives.
+              </p>
+            </div>
+            
+            {/* Wireframing & Prototyping */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-blue-500 transition-all">
+              <div className="flex items-start mb-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-bold">2</span>
+                </div>
+                <h3 className="text-xl font-bold">Wireframing & Prototyping</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Creating interactive skeletons to test and get valuable feedback for user experience.
+              </p>
+            </div>
+            
+            {/* Agile Development */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-blue-500 transition-all">
+              <div className="flex items-start mb-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-bold">3</span>
+                </div>
+                <h3 className="text-xl font-bold">Agile Development</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Building dynamic and useful interfaces using modern frameworks like React, Angular, or Vue.js.
+              </p>
+            </div>
+            
+            {/* Responsive Design */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-blue-500 transition-all">
+              <div className="flex items-start mb-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-bold">4</span>
+                </div>
+                <h3 className="text-xl font-bold">Responsive Design</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Ensuring excellent performance across all devices and screen sizes.
+              </p>
+            </div>
+            
+            {/* Performance Optimization */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-blue-500 transition-all md:col-span-2">
+              <div className="flex items-start mb-4">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-white font-bold">5</span>
+                </div>
+                <h3 className="text-xl font-bold">Performance Optimization</h3>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Implementing best practices for faster load times, highly optimized user interfaces.
+              </p>
+            </div>
+          </div>
         </div>
-        <style jsx>{`
-          .frontend-page.hero-section {
-            position: relative;
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            overflow: hidden;
-          }
-
-          .frontend-page.hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.1) 0%, transparent 70%);
-            z-index: 1;
-          }
-
-          .frontend-page .hero-title {
-            position: relative;
-            z-index: 2;
-            font-size: 4rem;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          }
-
-          .frontend-page .hero-subtitle {
-            position: relative;
-            z-index: 2;
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 800px;
-            line-height: 1.8;
-            margin: 1.5rem auto 0;
-          }
-
-          @media (max-width: 768px) {
-            .frontend-page.hero-section {
-              padding: 6rem 0;
-            }
-            
-            .frontend-page .hero-title {
-              font-size: 2.5rem;
-            }
-            
-            .frontend-page .hero-subtitle {
-              font-size: 1.2rem;
-            }
-          }
-        `}</style>
       </section>
-
-      {/* Methodology Section */}
-      <section className="methodology-section">
-        <div className="container flex">
-          <div className="w-1/2 sticky top-0 h-screen flex flex-col justify-center">
-            <h2 className="section-title text-left mb-8">
-              Our Methodology For Creating Intuitive And Responsive Front-End Interfaces
-            </h2>
+      
+      {/* Transforming Ideas Section */}
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Transforming Ideas into Impactful Web Experiences</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Expert team of innovators */}
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-4 w-32 h-32 relative">
+              <div className="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Expert team of innovators</h3>
+            <p className="text-gray-400 text-sm">
+              Our team combines creativity, technical expertise, and a deep understanding of business needs to build exceptional frontend solutions.
+            </p>
           </div>
           
-          <div className="w-1/2 space-y-8">
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="methodology-card"
-            >
-              <div className="methodology-icon">
-                <span>01</span>
+          {/* Tailored solutions for your ideas */}
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-4 w-48 h-48 bg-blue-500 rounded-lg p-4 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Tailored solutions for your ideas</h3>
+            <p className="text-gray-400 text-sm">
+              We develop custom frontend solutions that align with your vision and create engaging digital experiences.
+            </p>
+          </div>
+          
+          {/* Commitment to quality */}
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-4 w-32 h-32 relative">
+              <div className="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
               </div>
-              <h3>Requirement Analysis</h3>
-              <p>Understanding the client's design goals, user needs, and business objectives.</p>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="methodology-card"
-            >
-              <div className="methodology-icon">
-               <span>02</span>
-              </div>
-              <h3>Wireframing & Prototyping</h3>
-              <p>Creating interactive wireframes to confirm and refine the user experience.</p>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="methodology-card"
-            >
-              <div className="methodology-icon">
-                <span>03</span>
-              </div>
-              <h3>Agile Development</h3>
-              <p>Building dynamic, pixel-perfect interfaces using modern frameworks like React, Angular, or Vue.js.</p>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="methodology-card"
-            >
-              <div className="methodology-icon">
-                <span>04</span>
-              </div>
-              <h3>Responsive Design</h3>
-              <p>Ensuring excellent performance across all devices and screen sizes.</p>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="methodology-card"
-            >
-              <div className="methodology-icon">
-                <span>05</span>
-              </div>
-              <h3>Performance Optimization</h3>
-              <p>Implementing best practices to deliver fast loading, highly optimized user interfaces.</p>
-            </motion.div>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Commitment to quality</h3>
+            <p className="text-gray-400 text-sm">
+              Quality assurance at every step ensures reliable, high-performance solutions that exceed expectations and deliver value.
+            </p>
           </div>
         </div>
       </section>
-
+      
       {/* Our Process Section */}
-      <section className="our-process-section">
-        <div className="container">
-          <h2 className="section-title text-center mb-12">Our Process</h2>
-          <h3 className="process-subtitle text-center mb-16 max-w-2xl mx-auto">
+      <section className="py-16 px-4 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-gray-400 uppercase tracking-wide mb-1">Our Process</h2>
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-16">
             Innovative Frontend Solutions That Scale With Your Business, Enhance UX, And Boost Engagement
           </h3>
-         
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="process-card bg-white/10 p-8 rounded-lg shadow-lg"
-            >
-              <div className="process-content">
-                <h3 className="text-xl font-bold mb-4">Strategic Discovery</h3>
-                <p className="mb-6">We begin by understanding your business needs and goals, conducting detailed research to craft a tailored and effective solution for your audience.</p>
-                <ul className="process-list space-y-2">
-                  <li>• Comprehensive analysis of your business goals and target audience</li>
-                  <li>• Insights to create a tailored approach to specific needs</li>
-                  <li>• A clear plan, full of exciting technologies, and designs from the start</li>
-                </ul>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="process-card bg-white/10 p-8 rounded-lg shadow-lg"
-            >
-              <div className="process-content">
-                <h3 className="text-xl font-bold mb-4">Innovative Design & Development</h3>
-                <p className="mb-6">Our expert team transforms designs into beautiful, scalable designs, using the latest technologies to build responsive user interfaces for optimal UX.</p>
-                <ul className="process-list space-y-2">
-                  <li>• User-centered frontend solutions with intuitive navigation</li>
-                  <li>• Clean, accessible code for future maintenance and scalability</li>
-                  <li>• Continuous client review to keep the design on the right track</li>
-                </ul>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="process-card bg-white/10 p-8 rounded-lg shadow-lg"
-            >
-              <div className="process-content">
-                <h3 className="text-xl font-bold mb-4">Seamless Integration & Optimization</h3>
-                <p className="mb-6">We ensure perfect integration with your existing systems to create efficient solutions that continuously evolve with your business to maximize impact.</p>
-                <ul className="process-list space-y-2">
-                  <li>• Seamless flow of information with your existing backend</li>
-                  <li>• Extensive testing through real-world practice</li>
-                  <li>• Performance monitoring with regular updates with deployment practices</li>
-                </ul>
-              </div>
-              <div className="process-image">
-                <Image src="/images/seamless-integration.png" alt="Seamless Integration" width={300} height={200} />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack Section */}
-      <section className="tech-stack-section">
-        <div className="container">
-          <h2 className="section-title">Tech Stack</h2>
           
-          <div className="tech-grid" style={{ display: 'flex', overflowX: 'auto', gap: '2rem', padding: '1rem 0' }}>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/angular.svg" alt="Angular" width={80} height={40} />
-              <span>Angular</span>
+          {/* Process Cards */}
+          <div className="space-y-12">
+            {/* Strategic Discovery */}
+            <div className="bg-gray-900 rounded-lg p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-bold mb-4">Strategic Discovery</h4>
+                <p className="text-gray-400 mb-6">
+                  We begin by understanding your design goals, needs and goals, conducting thorough research to craft a tailored and robust solution for your audience and goals.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Comprehensive analysis of your business, goals, and target audience</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Insights to create a tailored approach to specific needs</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">A clear plan, full-on branding frameworks, and migration from the past</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-64 h-48 bg-gray-800 rounded-lg flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+              </div>
             </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/vue.svg" alt="Vue.js" width={80} height={40} />
-              <span>Vue.js</span>
+            
+            {/* Innovative Design & Development */}
+            <div className="bg-gray-900 rounded-lg p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-bold mb-4">Innovative Design & Development</h4>
+                <p className="text-gray-400 mb-6">
+                  Our expert team of developers brings to innovative, scalable designs, using the latest technologies to build exceptional, high-performance user interfaces in record time.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Iterative feedback for practical interface builds</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Agile methodology to ensure on-time delivery despite contingent issues</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Continuous factor testing to solve the bugs fit for an action</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-64 h-48 bg-gray-800 rounded-lg flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </div>
+              </div>
             </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/react.svg" alt="React" width={80} height={40} />
-              <span>React</span>
-            </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/html5.svg" alt="HTML5" width={80} height={40} />
-              <span>HTML5</span>
-            </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/css3.svg" alt="CSS3" width={80} height={40} />
-              <span>CSS3</span>
-            </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/nextjs.svg" alt="Next.js" width={80} height={40} />
-              <span>Next.js</span>
-            </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/tailwind.svg" alt="Tailwind CSS" width={80} height={40} />
-              <span>Tailwind</span>
-            </div>
-            <div className="tech-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '100px' }}>
-              <Image src="/images/tech/typescript.svg" alt="TypeScript" width={80} height={40} />
-              <span>TypeScript</span>
+            
+            {/* Seamless Integration & Optimization */}
+            <div className="bg-gray-900 rounded-lg p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="md:col-span-2">
+                <h4 className="text-xl font-bold mb-4">Seamless Integration & Optimization</h4>
+                <p className="text-gray-400 mb-6">
+                  Beyond development, we incorporate best-in-class performance practices, efficient analytics that continuously evolve with your business to maximize impact.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Seamless flow of functionality with site-to-site transitions</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Extensive testing programs that certify quality</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
+                    <p className="text-gray-300 text-sm">Refined metrics and tracking with data and scoring pages with appropriate sources</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="w-64 h-48 bg-gray-800 rounded-lg flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Have a project in mind?</h2>
-            <p className="cta-subtitle">Let's Connect</p>
-            <div className="cta-button-container">
-              <Link href="/contact" className="btn btn-primary btn-large">
-                Get In Touch
-                <span className="arrow-icon">→</span>
-              </Link>
+      
+      {/* Tech Stack */}
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Tech Stack</h2>
+        
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 items-center justify-items-center">
+          {[
+            "JavaScript", "HTML/CSS", "Tailwind", "React", "Next.js", "Angular", "Vue.js", "Node.js"
+          ].map((tech, index) => (
+            <div key={index} className="flex flex-col items-center justify-center p-4 bg-gray-900 rounded-lg w-full">
+              <div className="w-12 h-12 bg-gray-800 rounded-full mb-2 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2H5z" />
+                </svg>
+              </div>
+              <span className="text-xs text-center">{tech}</span>
             </div>
-          </div>
+          ))}
         </div>
-        <style jsx>{`
-          .cta-section {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            text-align: center;
-          }
-          .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-          }
-          .cta-title {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-          }
-          .cta-subtitle {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 2rem;
-          }
-          .cta-button-container {
-            display: inline-block;
-          }
-          .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 0.5rem;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: white;
-            transition: transform 0.2s ease;
-          }
-          .btn-primary:hover {
-            transform: translateY(-2px);
-          }
-          .arrow-icon {
-            transition: transform 0.2s ease;
-          }
-          .btn-primary:hover .arrow-icon {
-            transform: translateX(3px);
-          }
-        `}</style>
       </section>
-
+      
+      {/* Contact CTA */}
+      <section className="py-12 px-4 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-blue-400 mb-1">Have a project in mind?</h2>
+          <p className="text-lg font-medium">Let's Connect</p>
+        </div>
+        <button className="mt-6 md:mt-0 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center">
+          Get in touch
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </button>
+      </section>
     </div>
   );
-};
-
-export default FrontendDevelopmentPage;
+}

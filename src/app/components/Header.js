@@ -49,7 +49,7 @@ export default function Header() {
           }`}>
             <ul className="py-2">
               <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
-                <Link href="/services/frontend-development" className={`block ${isActive('/services/custom-software-development') ? 'text-blue极-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Frontend Development</Link>
+                <Link href="/services/frontend-development" className={`block ${isActive('/services/frontend-development') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Frontend Development</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
                 <Link href="/services/mobile-app-development" className={`block ${isActive('/services/mobile-app-development') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Mobile App Development</Link>
