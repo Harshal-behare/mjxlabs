@@ -91,7 +91,7 @@ const BlogsSection = () => {
         
         <div className="flex justify-center mt-12">
           <Link 
-            href="/blogs" 
+            href="/blog" 
             className="bg-black border border-gray-700 hover:border-blue-500 text-white hover:text-blue-400 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-blue-500/20"
           >
             Read More
