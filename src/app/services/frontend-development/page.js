@@ -228,8 +228,8 @@ export default function FrontendDevelopmentPage() {
                     <div className="w-5 h-5 rounded-full bg-green-500 mt-1 mr-3 flex-shrink-0"></div>
                     <p className="text-gray-300 text-sm">Refined metrics and tracking with data and scoring pages with appropriate sources</p>
                   </li>
-                </ul>
-              </div>
+        </ul>
+      </div>
               <div className="flex items-center justify-center">
                 <div className="w-64 h-48 bg-gray-800 rounded-lg flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import React from 'react';
 import WhatsAppButton from './components/WhatsAppButton';
+import BlogsSection from "./blog/BlogSectionForHome";
 
 export default function Home() {
   return (
@@ -110,6 +111,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <BlogsSection />
 
         <WhatsAppButton />
       </div>
