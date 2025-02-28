@@ -88,31 +88,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* Recent Projects Section */}
-        <div className="mt-10 text-left w-full">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Recent Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-2 border-gray-700/30 hover:border-blue-500/30 transition-all duration-300 hover:shadow-blue-500/10 group">
-              <h3 className="text-2xl font-bold text-white">Project Alpha</h3>
-              <p className="mt-2 text-gray-400">A cutting-edge AI solution for data analysis.</p>
-            </div>
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-2 border-gray-700/30 hover:border-purple-500/30 transition-all duration-300 hover:shadow-purple-500/10 group">
-              <h3 className="text-2xl font-bold text-white">Project Beta</h3>
-              <p className="mt-2 text-gray-400">An innovative mobile app for e-commerce.</p>
-            </div>
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-2 border-gray-700/30 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-indigo-500/10 group">
-              <h3 className="text-2xl font-bold text-white">Project Gamma</h3>
-              <p className="mt-2 text-gray-400">A comprehensive cloud solution for businesses.</p>
-            </div>
-          </div>
+        
         </div>
-
-        <div className="text-center mt-10">
-          <Link href="/portfolio" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 font-semibold">
-            View Our Portfolio
-          </Link>
-        </div>
-      </div>
     </>
   );
 }

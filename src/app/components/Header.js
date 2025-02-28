@@ -31,7 +31,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-1 shadow-md hover:shadow-blue-400 bg-black/90 backdrop-blur-lg border-b border-blue-600">
       <div className="flex items-center space-x-3">
         <img src="/OnlyLogo.png" alt="Logo" className="h-10 w-10 rounded-lg shadow-lg hover:scale-105 transition-transform" />
-        <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-700 transition-all">
+        <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-blue-600 hover:to-purple-700 transition-all hover:glow-blue ">
           MJX LABS
         </Link>
       </div>
@@ -93,7 +93,7 @@ export default function Header() {
         </div>
 
         <Link href="/blog" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Blog</Link>
-        <Link href="/about" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/about') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>About us</Link>
+        <Link href="/about" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/about') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>About Us</Link>
         <Link href="/pricing" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/pricing') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Pricing</Link>
         <Link href="/contact" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/contact') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Contact Us</Link>
       </nav>
