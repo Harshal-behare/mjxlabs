@@ -44,6 +44,25 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Trusted Clients Section */}
+        <div className="mt-16 w-full">
+          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Trusted By Industry Leaders</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
+              <Image src="/Clients/logo.png" alt="Google" width={120} height={40} className="w-full h-auto" />
+            </div>
+            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
+              <Image src="/Clients/logo2.jpeg" alt="Microsoft" width={120} height={40} className="w-full h-auto" />
+            </div>
+            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
+              <Image src="/Clients/image.png" alt="Amazon" width={120} height={40} className="w-full h-auto" />
+            </div>
+            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
+              <Image src="/Clients/logo3.png" alt="IBM" width={120} height={40} className="w-full h-auto" />
+            </div>
+          </div>
+        </div>
+
         {/* Testimonials Section */}
         <div className="mt-16 text-left w-full">
           <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">What Our Clients Say</h2>
