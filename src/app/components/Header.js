@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-1 shadow-lg bg-black/90 backdrop-blur-lg border-b-2 border-transparent" style={{ borderImage: 'linear-gradient(to right, #3b82f6, #9333ea) 1' }}>
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-1 shadow-lg bg-black/90 backdrop-blur-lg border-b border-transparent border-b-white" >
       <div className="flex items-center space-x-3">
         <img src="/OnlyLogo.png" alt="Logo" className="h-12 w-12 rounded-lg shadow-lg hover:scale-105 transition-transform" />
         <Link href="/" className="text-2xl font-bold text-white bg-clip-text text-transparent transition-all hover:glow-blue">
