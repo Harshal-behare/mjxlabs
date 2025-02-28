@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from 'next/link';
 import React from 'react';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function Home() {
   return (
@@ -15,12 +18,12 @@ export default function Home() {
               </div>
               <div className="flex-1">
                 <h1 className="text-5xl font-bold mb-4">
-                Empowering Businesses with   <br /> AI Innovation
+                  Empowering Businesses with AI Innovation
                 </h1>
                 <p className="text-lg mb-6">
-                From research to real-world implementation, we develop AI-driven solutions that enhance efficiency, scalability, and profitability.
+                  From research to real-world implementation, we develop AI-driven solutions that enhance efficiency, scalability, and profitability.
                 </p>
-                <Link href="/get-started" className="inline-block bg-gradient-to-r from-orange-500 to-yellow-500 text-black   px-10 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                <Link href="/get-started" className="inline-block bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-10 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                   Get Started →
                 </Link>
               </div>
@@ -30,7 +33,7 @@ export default function Home() {
 
         {/* Key Value Propositions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full">
-          <div className="p-8 bg-black rounded-xl  transition-all duration-300 hover:scale-105 hover:shadow-blue-500 shadow-lg border border-white backdrop-blur-sm">
+          <div className="p-8 bg-black rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500 shadow-lg border border-white backdrop-blur-sm">
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Cutting-Edge Expertise</h2>
             <p className="mt-4 text-gray-400 leading-relaxed">Industry leaders in AI research & enterprise deployment</p>
           </div>
@@ -40,7 +43,7 @@ export default function Home() {
           </div>
           <div className="p-8 bg-black rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-purple-400 border border-white backdrop-blur-sm">
             <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-600 text-white">Global AI Integration</h2>
-            <p className="mt-4 text-gray-400 leading-relaxed">AI solutions accessible & adaptable across industries worldwide</p>
+            <p className="mt-4 text-gray-400 leading-relaxed">AI solutions accessible & adaptable across industries worldwide</p>
           </div>
         </div>
 
@@ -107,8 +110,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        </div>
+
+        <WhatsAppButton />
+      </div>
     </>
   );
 }
