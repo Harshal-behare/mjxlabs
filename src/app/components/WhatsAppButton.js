@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
   const handleClick = () => {
@@ -13,7 +14,8 @@ const WhatsAppButton = () => {
       className="fixed bottom-5 right-5 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300"
       aria-label="Chat with us on WhatsApp"
     >
-      <img src="/whatsapp-icon.svg" alt="WhatsApp" className="h-6 w-6" />
+        <FaWhatsapp className="text-2xl" />
+      
     </button>
   );
 };
