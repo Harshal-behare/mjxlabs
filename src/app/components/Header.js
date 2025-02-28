@@ -61,7 +61,10 @@ export default function Header() {
                 <Link href="/services/cloud-devops" className={`block ${isActive('/services/cloud-devops') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Cloud Solutions & DevOps</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
-                <Link href="/services/e-commerce" className={`block ${isActive('/services/e-commerce') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>E-commerce Solutions</Link>
+                <Link href="/services/data-analysis-data-science" className={`block ${isActive('/services/data-analysis-data-science') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Data Analysis Data Science</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+                <Link href="/services/backend-development" className={`block ${isActive('/services/backend-development') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Backend Development</Link>
               </li>
             </ul>
           </div>
