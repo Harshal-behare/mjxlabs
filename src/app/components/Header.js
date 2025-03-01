@@ -8,6 +8,7 @@ export default function Header() {
   const pathname = usePathname();
   const [hoveredMenu, setHoveredMenu] = useState(null);
   const [timeoutId, setTimeoutId] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isActive = (path) => pathname === path;
   const isChildActive = (parentPath) => pathname.startsWith(parentPath);
@@ -27,15 +28,19 @@ export default function Header() {
     setTimeoutId(id);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-1 shadow-lg bg-black/90 backdrop-blur-lg border-b border-transparent border-b-white" >
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-1 shadow-lg bg-black/90 backdrop-blur-lg border-b border-transparent border-b-white">
       <div className="flex items-center space-x-3">
         <img src="/OnlyLogo.png" alt="Logo" className="h-12 w-12 rounded-lg shadow-lg hover:scale-105 transition-transform" />
         <Link href="/" className="text-2xl font-bold text-white bg-clip-text text-transparent transition-all hover:glow-blue">
           MJX LABS
         </Link>
       </div>
-      <nav className="flex items-center space-x-6">
+      <nav className="hidden md:flex items-center space-x-6">
         <div 
           className="relative group"
           onMouseEnter={() => handleMouseEnter('what-we-do')}
@@ -100,6 +105,29 @@ export default function Header() {
         <Link href="/pricing" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/pricing') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Pricing</Link>
         <Link href="/contact" className={`px-3 py-2 rounded-lg bg-gradient-to-r from-blue-700 to-blue-400 transition-colors ${isActive('/contact') ? 'text-blue-800 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Contact</Link>
       </nav>
+      <button className="md:hidden text-white" onClick={toggleMobileMenu}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      {isMobileMenuOpen && (
+        <div className="absolute top-16 left-0 right-0 bg-gray-900 rounded-lg shadow-lg z-50">
+          <ul className="flex flex-col items-center py-2">
+            <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+              <Link href="/blog" className={`block ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+              <Link href="/about" className={`block ${isActive('/about') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>About Us</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+              <Link href="/pricing" className={`block ${isActive('/pricing') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Pricing</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+              <Link href="/contact" className={`block ${isActive('/contact') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Contact</Link>
+            </li>
+          </ul>
+        </div>
+      )}
       <style jsx>{`
         .glow-blue {
           text-shadow: 0 0 8px rgba(59, 130, 246, 0.8), 0 0 12px rgba(59, 130, 246, 0.6);
