@@ -6,28 +6,53 @@ const ContactUs = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!name || !email || !message) {
+      setStatus('Please fill in all required fields');
+      return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      setStatus('Please enter a valid email address');
+      return;
+    }
+
     setStatus('Sending...');
 
-    const response = await fetch('https://script.google.com/macros/s/AKfycbyhYPsLzcdSVNQBFwseyKj2URhR7AKYKzEQRAmezfWFoDrB0FbvtNHaQUVzKGtx_C3Czg/exec', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, message }),
-    });
+    try {
+      const formData = new FormData();
+      formData.append('Name', name);
+      formData.append('Email', email);
+      formData.append('Phone', phone);
+      formData.append('Message', message);
+      formData.append('Timestamp', new Date().toISOString());
 
-    const result = await response.json();
-    if (result.result === "Success") {
-      setStatus('Message sent successfully!');
-      setName('');
-      setEmail('');
-      setMessage('');
-    } else {
-      setStatus('Error sending message. Please try again.');
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyB7s27-jzEXnkyLoPdvzXlRyqSA4B7SMTd_aZ1x9b35u-j0PZT2Ml5NeAgiaJDFW83/exec', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setName('');
+        setEmail('');
+        setMessage('');
+        setPhone('');
+      } else {
+        throw new Error('Failed to send message');
+      }
+      
+    } catch (error) {
+      setStatus('An error occurred. Please try again.');
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -46,43 +71,65 @@ const ContactUs = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-lg p-8 rounded-2xl border border-gray-800/50 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+          <div className="bg-gradient-to-br from-gray-90/50 to-black/50 backdrop-blur-lg p-8 rounded-2xl border border-gray-800/50 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-gray-400 text-sm mb-2">Full Name</label>
+                <label className="block text-gray-400 text-sm mb-2">Full Name *</label>
                 <input
                   type="text"
                   placeholder="Narayan rav"
+                  name="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  required
                 />
               </div>
 
               <div>
-                <label className="block text-gray-400 text-sm mb-2">Email</label>
+                <label className="block text-gray-400 text-sm mb-2">Email *</label>
                 <input
                   type="email"
                   placeholder="you@example.com"
+                  name="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-400 text-sm mb-2">Phone No.</label>
+                <input
+                  type="tel"
+                  placeholder="+91 1234567890"
+                  name="Phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-400 text-sm mb-2">Message</label>
+                <label className="block text-gray-400 text-sm mb-2">Message *</label>
                 <textarea
                   rows="4"
                   placeholder="How can we help you?"
+                  name="Message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  required
                 ></textarea>
               </div>
 
-              <button type="submit" className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
-                Send Message
+              <button 
+                type="submit" 
+                className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                disabled={status === 'Sending...'}
+              >
+                {status === 'Sending...' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -129,4 +176,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs; 
+export default ContactUs;
