@@ -39,14 +39,12 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <label className="block text-gray-400 text-sm mb-2">Your Inquiry</label>
-                <select className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white focus:outline-none focus:border-blue-500 transition-colors">
-                  <option value="" className="bg-gray-900">Select...</option>
-                  <option value="general" className="bg-gray-900">General Inquiry</option>
-                  <option value="support" className="bg-gray-900">Technical Support</option>
-                  <option value="partnership" className="bg-gray-900">Partnership</option>
-                  <option value="other" className="bg-gray-900">Other</option>
-                </select>
+                <label className="block text-gray-400 text-sm mb-2">Phone No.</label>
+                <input
+                  type="tel"
+                  placeholder="+91 1234567890"
+                  className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                />
               </div>
 
               <div>
@@ -71,7 +69,7 @@ const ContactUs = () => {
                 Office Location
               </h3>
               <p className="mt-2 text-gray-400">
-                123 khau gali<br />
+                <br />
                 Pune , 411037<br />
                 India
               </p>

@@ -14,7 +14,7 @@ const BlogPost = ({ image, title, description, author }) => {
           Read more
         </button>
       </div>
-      <div className="w-full md:w-128 h-48 md:h-64 relative mb-4 md:mb-0 order-1 md:order-2">
+      <div className="w-1/2 md:w-128 h-48 md:h-64 relative mb-4 md:mb-0 order-1 md:order-2">
         <Image
           src={image}
           alt={title}

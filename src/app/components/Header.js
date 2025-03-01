@@ -85,7 +85,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div 
+        {/* <div 
           className="relative group"
           onMouseEnter={() => handleMouseEnter('for-talent')}
           onMouseLeave={handleMouseLeave}
@@ -108,7 +108,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
 
         <Link href="/blog" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Blog</Link>
         <Link href="/about" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/about') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>About Us</Link>
@@ -154,7 +154,7 @@ export default function Header() {
                 </ul>
               )}
             </li>
-            <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+            {/* <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
               <button onClick={toggleForTalent} className={`block text-gray-300 hover:text-white`}>
                 For Talent
               </button>
@@ -171,7 +171,7 @@ export default function Header() {
                   </li>
                 </ul>
               )}
-            </li>
+            </li> */}
             <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
               <Link href="/blog" className={`block ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
             </li>
