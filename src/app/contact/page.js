@@ -1,8 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 const ContactUs = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyhYPsLzcdSVNQBFwseyKj2URhR7AKYKzEQRAmezfWFoDrB0FbvtNHaQUVzKGtx_C3Czg/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    const result = await response.json();
+    if (result.result === "Success") {
+      setStatus('Message sent successfully!');
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else {
+      setStatus('Error sending message. Please try again.');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black bg-opacity-95 text-white py-20 px-5">
       <div className="max-w-4xl mx-auto">
@@ -19,12 +47,14 @@ const ContactUs = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-lg p-8 rounded-2xl border border-gray-800/50 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-gray-400 text-sm mb-2">Full Name</label>
                 <input
                   type="text"
                   placeholder="Narayan rav"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                 />
               </div>
@@ -34,15 +64,8 @@ const ContactUs = () => {
                 <input
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-gray-400 text-sm mb-2">Phone No.</label>
-                <input
-                  type="tel"
-                  placeholder="+91 1234567890"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                 />
               </div>
@@ -52,11 +75,13 @@ const ContactUs = () => {
                 <textarea
                   rows="4"
                   placeholder="How can we help you?"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-900/50 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                 ></textarea>
               </div>
 
-              <button className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
+              <button type="submit" className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
                 Send Message
               </button>
             </form>
@@ -99,6 +124,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      {status && <p className="mt-4 text-center text-gray-400">{status}</p>}
     </div>
   );
 };
