@@ -83,7 +83,7 @@ const ContactUs = () => {
               </h3>
               <p className="mt-2 text-gray-400">
                 Email: contact@mjxlabs.com<br />
-                Phone: +1 (555) 123-4567<br />
+                Phone: 9226167634 <br />
                 Hours: Mon-Fri 9:00 AM - 6:00 PM PST
               </p>
             </div>
