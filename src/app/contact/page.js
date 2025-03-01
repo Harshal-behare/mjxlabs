@@ -41,7 +41,7 @@ const ContactUs = () => {
       });
 
       if (response.ok) {
-        setStatus('Message sent successfully!');
+        setStatus('We will get back to you soon!');
         setName('');
         setEmail('');
         setMessage('');
