@@ -110,6 +110,7 @@ export default function Header() {
           </div>
         </div> */}
 
+<Link href="/hiredevelopers" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/hiredevelopers') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Hire Developers</Link>
         <Link href="/blog" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Blog</Link>
         <Link href="/about" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/about') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>About Us</Link>
         <Link href="/pricing" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/pricing') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Pricing</Link>
@@ -172,6 +173,9 @@ export default function Header() {
                 </ul>
               )}
             </li> */}
+             <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+              <Link href="/hiredevelopers" className={`block ${isActive('/hiredevelopers') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Hire Developers</Link>
+            </li>
             <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
               <Link href="/blog" className={`block ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Blog</Link>
             </li>
