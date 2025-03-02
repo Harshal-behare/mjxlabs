@@ -141,10 +141,9 @@ const ContactUs = () => {
                 Office Location
               </h3>
               <p className="mt-2 text-gray-400">
-                <br />
-                Pune , 411037<br />
-                India
-              </p>
+             📍Virtual Office: WeWork Enab, BKC, Mumbai
+             📍 Physical Office: Gangadham Phase 1, C1-401, Pune
+               </p>
             </div>
 
             <div className="bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-lg p-6 rounded-2xl border border-gray-800/50 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:border-purple-500/30 transition-all duration-300">
@@ -165,7 +164,6 @@ const ContactUs = () => {
               <div className="mt-2 space-x-4">
                 <a href="https://linkedin.com" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
                 <a href="https://x.com" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
-                <a href="https://github.com" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
               </div>
             </div>
           </div>
