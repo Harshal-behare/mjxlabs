@@ -195,31 +195,8 @@ export default function SoftwareDevelopersPage() {
             Needs
           </p>
         </div>
-        <div className="md:w-1/2 relative">
-          <div className="grid grid-cols-4 gap-2">
-            {/* Technology hexagons */}
-            {[
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-              { icon: "/placeholder.svg?height=40&width=40", bg: "bg-white" },
-            ].map((tech, index) => (
-              <div key={index} className="hex-container">
-                <div className={`hex ${tech.bg}`}>
-                  <Image src={tech.icon || "/placeholder.svg"} alt="Technology" width={40} height={40} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <img src="/Hire Developer.png" alt="React" className="h-1/2 w-1/2" />
+        
       </section>
 
       {/* Why Choose Section */}
