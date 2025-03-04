@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import Link from 'next/link';
-import { FaImage, FaTimes } from 'react-icons/fa';
+import Image from 'next/image';
+import { FaImage, FaTimes, FaArrowLeft } from 'react-icons/fa';
 
 export default function NewBlogPost() {
   const router = useRouter();
@@ -33,7 +34,6 @@ export default function NewBlogPost() {
       imageURL: imageUrl,
     }));
     
-    // Set preview image
     if (imageUrl) {
       setPreviewImage(imageUrl);
     }
@@ -63,60 +63,66 @@ export default function NewBlogPost() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-24 pb-12">
+    <div className="min-h-screen bg-black text-white pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
+          {/* Header */}
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800">Create New Blog Post</h1>
-            <Link href="/blog" className="text-blue-600 hover:text-blue-800">
-              Cancel
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Create New Blog Post
+            </h1>
+            <Link 
+              href="/blog" 
+              className="flex items-center text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <FaArrowLeft className="mr-2" />
+              Back to Blog
             </Link>
           </div>
           
+          {/* Error Message */}
           {error && (
-            <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <svg className="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div className="ml-3">
-                  <p className="text-sm text-red-700">{error}</p>
-                </div>
+            <div className="mb-8 bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+              <div className="flex items-center">
+                <FaTimes className="text-red-400 mr-3" />
+                <p className="text-red-400">{error}</p>
               </div>
             </div>
           )}
           
-          <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-md p-8">
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-lg rounded-2xl border border-gray-800/50 p-8">
+            {/* Title */}
             <div className="mb-6">
-              <label className="block text-gray-700 font-medium mb-2">Title</label>
+              <label className="block text-gray-300 font-medium mb-2">Title</label>
               <input
                 type="text"
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-black"
-                placeholder="Enter post title"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20"
+                placeholder="Enter your post title"
                 required
               />
             </div>
             
+            {/* Author */}
             <div className="mb-6">
-              <label className="block text-gray-700 font-medium mb-2">Author</label>
+              <label className="block text-gray-300 font-medium mb-2">Author</label>
               <input
                 type="text"
                 name="author"
                 value={formData.author}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20"
                 placeholder="Enter author name"
                 required
               />
             </div>
             
+            {/* Image URL */}
             <div className="mb-6">
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-gray-300 font-medium mb-2">
                 <div className="flex items-center">
                   <FaImage className="mr-2" />
                   Featured Image URL
@@ -128,65 +134,73 @@ export default function NewBlogPost() {
                   name="imageURL"
                   value={formData.imageURL}
                   onChange={handleImageChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-blue-500 focus:border-blue-500 text-black"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20"
                   placeholder="https://example.com/image.jpg"
                 />
                 {formData.imageURL && (
                   <button 
                     type="button" 
                     onClick={clearImage}
-                    className="bg-red-500 text-white px-3 rounded-r-lg hover:bg-red-600"
+                    className="px-4 bg-red-500/20 text-red-400 rounded-r-lg hover:bg-red-500/30 transition-colors duration-300"
                   >
                     <FaTimes />
                   </button>
                 )}
               </div>
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-400 mt-2">
                 Enter a URL for the featured image of your blog post
               </p>
               
+              {/* Image Preview */}
               {previewImage && (
                 <div className="mt-4">
-                  <p className="text-sm font-medium text-gray-700 mb-2">Image Preview:</p>
-                  <div className="relative h-48 w-full bg-gray-100 rounded-lg overflow-hidden">
-                    <img 
+                  <p className="text-sm font-medium text-gray-300 mb-2">Image Preview:</p>
+                  <div className="relative h-48 w-full bg-gray-800 rounded-lg overflow-hidden">
+                    <Image 
                       src={previewImage} 
                       alt="Preview" 
+                      width={800}
+                      height={400}
                       className="w-full h-full object-cover"
                       onError={() => setPreviewImage(null)}
+                      unoptimized={previewImage.startsWith('http')}
                     />
                   </div>
                 </div>
               )}
             </div>
             
-            <div className="mb-6">
-              <label className="block text-gray-700 font-medium mb-2">Content</label>
+            {/* Content */}
+            <div className="mb-8">
+              <label className="block text-gray-300 font-medium mb-2">Content</label>
               <textarea
                 name="content"
                 value={formData.content}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20"
                 rows="12"
                 placeholder="Write your blog post content here..."
                 required
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-400 mt-2">
                 Use line breaks to separate paragraphs
               </p>
             </div>
             
+            {/* Submit Button */}
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-300 flex items-center"
                 disabled={submitting}
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {submitting ? 'Publishing...' : 'Publish Post'}
-                {!submitting && (
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
+                {submitting ? (
+                  <>
+                    <div className="animate-spin mr-2 h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+                    Publishing...
+                  </>
+                ) : (
+                  'Publish Post'
                 )}
               </button>
             </div>
