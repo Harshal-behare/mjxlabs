@@ -14,9 +14,9 @@ export default function Home() {
     { name: "IBM", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
     { name: "Tesla", logo: "/Clients/logo.png", demo: "https://tesla.com" },
     { name: "Meta", logo: "/Clients/logo.png", demo: "https://meta.com" },
-    { name: "Apple", logo: "/Clients/logo.png", demo: "https://apple.com" },
+    { name: "Apple", logo: "/Clients/logo3.png", demo: "https://apple.com" },
     { name: "Netflix", logo: "/Clients/logo.png", demo: "https://netflix.com" },
-    { name: "Netflix", logo: "/Clients/logo.png", demo: "https://netflix.com" }
+    { name: "Netflix", logo: "/Clients/logo2.jpeg", demo: "https://netflix.com" }
   ];
 
   const marqueeRef = useRef(null);
@@ -29,7 +29,7 @@ export default function Home() {
     marquee.parentNode.appendChild(clone);
 
     const totalWidth = marquee.scrollWidth;
-    const duration = totalWidth / 50; // Adjust speed by changing the divisor
+    const duration = totalWidth / 50;
 
     marquee.style.animation = `marquee ${duration}s linear infinite`;
     clone.style.animation = `marquee ${duration}s linear infinite`;
@@ -88,11 +88,11 @@ export default function Home() {
             <style jsx>{`
               @keyframes marquee {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-100%); }
+                100% { transform: translateX(-50%); }
               }
               .marquee-container {
                 display: flex;
-                width: max-content;
+                width: 200%;
                 animation: marquee 20s linear infinite;
               }
               .marquee-item {
@@ -100,7 +100,7 @@ export default function Home() {
                 margin: 0 2rem;
               }
             `}</style>
-            <div className="marquee-container">
+            <div className="marquee-container" ref={marqueeRef}>
               {[...clients, ...clients].map((client, index) => (
                 <a
                   key={index}
