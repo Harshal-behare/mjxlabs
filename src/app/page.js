@@ -8,15 +8,11 @@ import BlogsSection from "./blog/BlogSectionForHome";
 
 export default function Home() {
   const clients = [
-    { name: "Google", logo: "/Clients/logo.png", demo: "https://google.com" },
+    { name: "AimFitness", logo: "/Clients/logo.png", demo: "" },
     { name: "Microsoft", logo: "/Clients/logo2.jpeg", demo: "https://microsoft.com" },
     { name: "Amazon", logo: "/Clients/image.png", demo: "https://amazon.com" },
     { name: "IBM", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
-    { name: "Tesla", logo: "/Clients/logo.png", demo: "https://tesla.com" },
-    { name: "Meta", logo: "/Clients/logo.png", demo: "https://meta.com" },
-    { name: "Apple", logo: "/Clients/logo3.png", demo: "https://apple.com" },
-    { name: "Netflix", logo: "/Clients/logo.png", demo: "https://netflix.com" },
-    { name: "Netflix", logo: "/Clients/logo2.jpeg", demo: "https://netflix.com" }
+    
   ];
 
   const marqueeRef = useRef(null);
