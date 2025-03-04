@@ -235,46 +235,31 @@ const BackendDevelopmentPage = () => {
           
           <div className="grid grid-cols-3 md:grid-cols-7 gap-8 mb-12">
             {/* Tech logos */}
-            <div className="flex justify-center items-center p-4">
-              <Image src="/images/react.svg" alt="React" width={80} height={32} />
+            <div className="flex-col justify-center items-center p-4">
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width={80} height={32} />
+            
             </div>
             <div className="flex justify-center items-center p-4">
-              <Image src="/images/node.svg" alt="Node.js" width={80} height={32} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" width={80} height={32} />
             </div>
             <div className="flex justify-center items-center p-4">
-              <Image src="/images/mongodb.svg" alt="MongoDB" width={80} height={32} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB" width={80} height={32} />
             </div>
             <div className="flex justify-center items-center p-4">
-              <Image src="/images/aws.svg" alt="AWS" width={80} height={32} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" width={80} height={32} />
             </div>
             <div className="flex justify-center items-center p-4">
-              <Image src="/images/php.svg" alt="PHP" width={80} height={32} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP" width={80} height={32} />
             </div>
             <div className="flex justify-center items-center p-4">
-              <Image src="/images/laravel.svg" alt="Laravel" width={80} height={32} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" width={80} height={32} />
             </div>
             <div className="flex justify-center items-center p-4">
-              <Image src="/images/python.svg" alt="Python" width={80} height={32} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" width={80} height={32} />
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p>Node.js</p>
-            </div>
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p>React</p>
-            </div>
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p>JavaScript</p>
-            </div>
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p>PHP</p>
-            </div>
-            <div className="p-3 bg-gray-100 rounded-lg">
-              <p>Laravel</p>
-            </div>
-          </div>
+         
         </div>
       </section>
       

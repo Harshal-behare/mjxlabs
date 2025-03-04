@@ -230,10 +230,10 @@ export default function AIServicesPage() {
       </section>
       
       {/* Tech Stack */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
+      <section className="py-16 px-4 max-w-6xl mx-auto ">
         <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Tech Stack</h2>
         
-        <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 items-center justify-items-center">
+        <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 items-center justify-items-center ">
           {[
             {name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"},
             {name: "Python", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"},
@@ -247,7 +247,7 @@ export default function AIServicesPage() {
             {name: "Azure", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"}
           ].map((tech, index) => (
             <div key={index} className="flex flex-col items-center justify-center p-4 bg-gray-900 rounded-lg w-full">
-              <div className="w-12 h-12 bg-gray-800 rounded-full mb-2 flex items-center justify-center">
+              <div className="w-12 h-12 bg-white rounded-full mb-2 flex items-center justify-center">
                 <img src={tech.logo} alt={tech.name} className="w-8 h-8 object-contain" />
               </div>
               <span className="text-xs text-center">{tech.name}</span>

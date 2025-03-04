@@ -238,18 +238,31 @@ const ManagedCloudDevOps = () => {
       </div>
 
       {/* Tech Stack */}
-      <div className="bg-white py-16 px-4 md:px-10">
+      <div className="bg-white py-16 px-4 md:px-10 text-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Tech Stack</h2>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 mb-12">
-            {['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'Git', 'Jenkins', 'Ansible', 'Cloudflare', 'Prometheus', 'Grafana', 'Elastic Stack'].map((tech, index) => (
+            {[
+              { name: 'AWS', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
+              { name: 'Azure', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg' },
+              { name: 'GCP', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg' },
+              { name: 'Docker', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg' },
+              { name: 'Kubernetes', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg' },
+              { name: 'Terraform', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg' },
+              { name: 'Git', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg' },
+              { name: 'Jenkins', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg' },
+              { name: 'Ansible', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg' },
+              { name: 'Cloudflare', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.svg' },
+              { name: 'Prometheus', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg' },
+              { name: 'Grafana', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg' },
+              { name: 'Elastic Stack', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Elasticsearch_logo.svg' }
+            ].map((tech, index) => (
               <div key={index} className="flex flex-col items-center justify-center p-4 border border-gray-200 rounded-lg">
                 <div className="w-12 h-12 mb-2 flex items-center justify-center">
-                  {/* Placeholder for tech logo */}
-                  <div className="w-10 h-10 bg-gray-100 rounded-md"></div>
+                  <img src={tech.logo} alt={tech.name} className="w-10 h-10 object-contain" />
                 </div>
-                <span className="text-sm text-center">{tech}</span>
+                <span className="text-sm text-center">{tech.name}</span>
               </div>
             ))}
           </div>

@@ -228,22 +228,36 @@ export default function DataAnalyticsPage() {
           
           <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
             {/* Tech icons - row 1 */}
-            {['Python', 'R', 'Tableau', 'PowerBI', 'Databricks', 'AWS'].map((tech, index) => (
+            {[
+              { name: 'Python', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' },
+              { name: 'R', logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg' },
+              { name: 'Tableau', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png' },
+              { name: 'PowerBI', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg' },
+              { name: 'Databricks', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png' },
+              { name: 'AWS', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' }
+            ].map((tech, index) => (
               <div key={`tech-${index}`} className="flex flex-col items-center">
                 <div className="w-12 h-12 mb-2 flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-gray-100"></div>
+                  <img src={tech.logo} alt={tech.name} className="w-10 h-10" />
                 </div>
-                <span className="text-sm">{tech}</span>
+                <span className="text-sm">{tech.name}</span>
               </div>
             ))}
             
             {/* Tech icons - row 2 */}
-            {['TensorFlow', 'Azure', 'Hadoop', 'Spark', 'PostgreSQL', 'MongoDB'].map((tech, index) => (
+            {[
+              { name: 'TensorFlow', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg' },
+              { name: 'Azure', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg' },
+              { name: 'Hadoop', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Hadoop_logo.svg' },
+              { name: 'Spark', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg' },
+              { name: 'PostgreSQL', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg' },
+              { name: 'MongoDB', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg' }
+            ].map((tech, index) => (
               <div key={`tech-${index + 6}`} className="flex flex-col items-center">
                 <div className="w-12 h-12 mb-2 flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-gray-100"></div>
+                  <img src={tech.logo} alt={tech.name} className="w-10 h-10" />
                 </div>
-                <span className="text-sm">{tech}</span>
+                <span className="text-sm">{tech.name}</span>
               </div>
             ))}
           </div>
