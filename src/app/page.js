@@ -2,11 +2,44 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import WhatsAppButton from './components/WhatsAppButton';
 import BlogsSection from "./blog/BlogSectionForHome";
 
 export default function Home() {
+  const clients = [
+    { name: "Google", logo: "/Clients/logo.png", demo: "https://google.com" },
+    { name: "Microsoft", logo: "/Clients/logo2.jpeg", demo: "https://microsoft.com" },
+    { name: "Amazon", logo: "/Clients/image.png", demo: "https://amazon.com" },
+    { name: "IBM", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
+    { name: "Tesla", logo: "/Clients/logo.png", demo: "https://tesla.com" },
+    { name: "Meta", logo: "/Clients/logo.png", demo: "https://meta.com" },
+    { name: "Apple", logo: "/Clients/logo.png", demo: "https://apple.com" },
+    { name: "Netflix", logo: "/Clients/logo.png", demo: "https://netflix.com" },
+    { name: "Netflix", logo: "/Clients/logo.png", demo: "https://netflix.com" }
+  ];
+
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return;
+
+    const clone = marquee.cloneNode(true);
+    marquee.parentNode.appendChild(clone);
+
+    const totalWidth = marquee.scrollWidth;
+    const duration = totalWidth / 50; // Adjust speed by changing the divisor
+
+    marquee.style.animation = `marquee ${duration}s linear infinite`;
+    clone.style.animation = `marquee ${duration}s linear infinite`;
+
+    return () => {
+      marquee.style.animation = '';
+      clone.style.animation = '';
+    };
+  }, []);
+
   return (
     <>
       <div className="flex flex-col items-start bg-black justify-center min-h-screen p-8 pb-12 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -49,65 +82,42 @@ export default function Home() {
         </div>
 
         {/* Trusted Clients Section */}
-        {/* <div className="mt-16 w-full">
+        <div className="mt-16 w-full overflow-hidden">
           <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Trusted By Industry Leaders</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
-              <Image src="/Clients/logo.png" alt="Google" width={120} height={40} className="w-full h-auto" />
-            </div>
-            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
-              <Image src="/Clients/logo2.jpeg" alt="Microsoft" width={120} height={40} className="w-full h-auto" />
-            </div>
-            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
-              <Image src="/Clients/image.png" alt="Amazon" width={120} height={40} className="w-full h-auto" />
-            </div>
-            <div className="p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50">
-              <Image src="/Clients/logo3.png" alt="IBM" width={120} height={40} className="w-full h-auto" />
-            </div>
-          </div>
-        </div> */}
-
-        {/* Testimonials Section */}
-        <div className="mt-16 text-left w-full">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">What Our Clients Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-700/30 hover:border-blue-500/30 transition-all duration-300 hover:shadow-blue-500/10 group">
-              <div className="mb-4">
-                <Image src="/people/person2.png" alt="Client" width={60} height={60} className="rounded-full ring-2 ring-blue-500/30 group-hover:ring-blue-500/70 transition-all" />
-              </div>
-              <p className="text-gray-300 italic text-lg leading-relaxed">"MJX LABS transformed our business with their innovative AI solutions. The results exceeded our expectations!"</p>
-              <div className="mt-4 flex items-center">
-                <div>
-                  <p className="font-semibold text-blue-400">Emily jhonson</p>
-                  <p className="text-sm text-gray-500">CEO, Tech Innovations</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-700/30 hover:border-purple-500/30 transition-all duration-300 hover:shadow-purple-500/10 group">
-              <div className="mb-4">
-                <Image src="/people/person1.png" alt="Client" width={60} height={60} className="rounded-full ring-2 ring-purple-500/30 group-hover:ring-purple-500/70 transition-all" />
-              </div>
-              <p className="text-gray-300 italic text-lg leading-relaxed">"Their expertise in machine learning has given us a competitive edge in the market. Truly outstanding work!"</p>
-              <div className="mt-4 flex items-center">
-                <div>
-                  <p className="font-semibold text-purple-400">Mark Smith</p>
-                  <p className="text-sm text-gray-500">Founder, Future Tech</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-700/30 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-indigo-500/10 group">
-              <div className="mb-4">
-                <Image src="/people/person2.png" alt="Client" width={60} height={60} className="rounded-full ring-2 ring-indigo-500/30 group-hover:ring-indigo-500/70 transition-all" />
-              </div>
-              <p className="text-gray-300 italic text-lg leading-relaxed">"The cloud solutions implemented by MJX LABS helped us scale our operations seamlessly. Highly recommended!"</p>
-              <div className="mt-4 flex items-center">
-                <div>
-                  <p className="font-semibold text-indigo-400">Emily Chen</p>
-                  <p className="text-sm text-gray-500">CTO, Cloud Systems Inc</p>
-                </div>
-              </div>
+          <div className="relative w-full h-32 overflow-hidden">
+            <style jsx>{`
+              @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-100%); }
+              }
+              .marquee-container {
+                display: flex;
+                width: max-content;
+                animation: marquee 20s linear infinite;
+              }
+              .marquee-item {
+                flex: 0 0 auto;
+                margin: 0 2rem;
+              }
+            `}</style>
+            <div className="marquee-container">
+              {[...clients, ...clients].map((client, index) => (
+                <a
+                  key={index}
+                  href={client.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="marquee-item p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50 hover:scale-105 transition-transform duration-300"
+                >
+                  <Image 
+                    src={client.logo} 
+                    alt={client.name} 
+                    width={120} 
+                    height={40} 
+                    className="w-full h-auto"
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </div>
