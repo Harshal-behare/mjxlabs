@@ -12,6 +12,9 @@ export default function Home() {
     { name: "Microsoft", logo: "/Clients/logo2.jpeg", demo: "https://microsoft.com" },
     { name: "Amazon", logo: "/Clients/image.png", demo: "https://amazon.com" },
     { name: "IBM", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
+    { name: "Google", logo: "/Clients/BombayForum.jpg", demo: ""},
+    { name: "Facebook", logo: "/Clients/PuneExpress.jpg", demo: ""},
+    { name: "Apple", logo: "/Clients/birdEarner.png", demo: ""}
     
   ];
 
