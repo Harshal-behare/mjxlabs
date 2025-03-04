@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useEffect } from "react"
+import Link from 'next/link';
 
 export default function SoftwareDevelopersPage() {
   
@@ -97,184 +98,97 @@ export default function SoftwareDevelopersPage() {
           </div>
         </div>
 
-        <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md transition duration-300">
-          About Us
-        </button>
+        <Link href="/about">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md transition duration-300">
+            About Us
+          </button>
+        </Link>
       </section>
 
      
       {/* Technologies We Work On Section */}
-      <section className="bg-black text-white py-16 px-4">
+      <section className="bg-black text-white py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-6">Technologies We Work On</h2>
-          <p className="text-center text-sm mb-10">Our Highly Skilled Development Team Members Technical expertise for Diverse Exceptional Quality and always the Full Potential Of Your Services</p>
-
-          {/* NoCode Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">NoCode Developers</h3>
-            <div className="grid grid-cols-5 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a935f12d43a48c71c6_6706269600236fccd3565849_Frame(4).svg" alt="Wix" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">WeWeb</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9d4b1d776a61be1e5_670626878755a96f4ce92d08_webflow-svgrepo-com%25201.svg" alt="Webflow" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Webflow</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9ecf082b10b9c03ce_670626a26f3052c5cdc3ec17_Layer_1(1).svg" alt="Bubble" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Bubble</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949acbec428850691b5e3_6706221743b3f70392989948_logo.svg" alt="Plasmic" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">FlutterFlow</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ae9ee0061b839dcf78_6704dce5f59457ec07efff39_Clip%2520path%2520group.svg" alt="Xano" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Xano</span>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Technologies We Work On</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto text-lg">Our highly skilled development team brings technical expertise across diverse technologies to unlock the full potential of your services</p>
           </div>
 
-          {/* Mobile App Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">Mobile App Developers</h3>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949adfd46d5e054ea2eef_670621e7294de62c5858bf1c_Frame.svg" alt="Android" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Android</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "NoCode Developers",
+                technologies: [
+                  { name: "WeWeb", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a935f12d43a48c71c6_6706269600236fccd3565849_Frame(4).svg" },
+                  { name: "Webflow", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9d4b1d776a61be1e5_670626878755a96f4ce92d08_webflow-svgrepo-com%25201.svg" },
+                  { name: "Bubble", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9ecf082b10b9c03ce_670626a26f3052c5cdc3ec17_Layer_1(1).svg" },
+                  { name: "FlutterFlow", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949acbec428850691b5e3_6706221743b3f70392989948_logo.svg" },
+                  { name: "Xano", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ae9ee0061b839dcf78_6704dce5f59457ec07efff39_Clip%2520path%2520group.svg" }
+                ]
+              },
+              {
+                title: "Mobile App Developers",
+                technologies: [
+                  { name: "Android", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949adfd46d5e054ea2eef_670621e7294de62c5858bf1c_Frame.svg" },
+                  { name: "iOS", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ad883d6937367c5a2b_670621f07cc67b505fc3eb22_Apple_iOS_logo%25201.svg" },
+                  { name: "React Native", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ad69b1360653d9d86b_6704dd0be6501c1451081a29_logo-react-svgrepo-com%25201.svg" },
+                  { name: "Flutter", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949aeba4b046a938d9426_66fe93e4b25e3d5286729b56_image%2520115.svg" }
+                ]
+              },
+              {
+                title: "Frontend Developers",
+                technologies: [
+                  { name: "Angular", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a5b9e1eff9a1d3da09_6706297d85f16a427e3e6be0_angular_logo.svg.svg" },
+                  { name: "React.js", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ad69b1360653d9d86b_6704dd0be6501c1451081a29_logo-react-svgrepo-com%25201.svg" },
+                  { name: "NextJS", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ae6661ce9bbe57e85a_66fe93eeddf5ee9b84352c2d_image%2520116.svg" },
+                  { name: "Vue", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dc6208a8fb423d77fb19_Group%20(1).svg" }
+                ]
+              },
+              {
+                title: "Back-End Developers",
+                technologies: [
+                  { name: "Firebase", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949abc032e07710780513_670622d5975b419ee4f5b0b0_firebase-svgrepo-com%25201.svg" },
+                  { name: "Node.js", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ac5b705cda9d7a3c4d_67062273e180bf664baff4fd_nodejs-logo-svgrepo-com%25201.svg" },
+                  { name: "Laravel", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a5edbfe289d2294c18_6706294d8755a96f4cec0de6_laravel-wordmark-1%25201.svg" },
+                  { name: "Java", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dcd99d3e7d527d33cb38_java%201%20(1).svg" }
+                ]
+              },
+              {
+                title: "CMS & E-Commerce Developers",
+                technologies: [
+                  { name: "Shopify", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a112a05875201c934e_676551817ac04b208afe7a12_Symbol.svg.svg" },
+                  { name: "WooCommerce", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dcb516b641af20bf23d2_Frame%201272628620.svg" },
+                  { name: "WordPress", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799db07e9704c5e19cdb55e_Group.svg" },
+                  { name: "Webflow", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9d4b1d776a61be1e5_670626878755a96f4ce92d08_webflow-svgrepo-com%25201.svg" }
+                ]
+              },
+              {
+                title: "AI Developers",
+                technologies: [
+                  { name: "Whisper", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9a75dc198b9989ea5_670626f0e35b6cf9d19048b7_whisper-ai-logo-vector%25201.svg" },
+                  { name: "LangChain", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a7bf1c60d85e6431b2_670627121cae83f1534aa87e_langchain-seeklogo%25201.svg" },
+                  { name: "Chatgpt", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dd56bb81275ca46db3f4_bubble_symbol.svg.svg" },
+                  { name: "AI engineer", icon: "https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/677bc6f0345804dec4dd3a95_Frame%201272628614.svg" }
+                ]
+              }
+            ].map((category) => (
+              <div key={category.title} className="bg-gray-900/50 backdrop-blur-lg rounded-lg p-6">
+                <h3 className="text-white text-center font-medium mb-8">{category.title}</h3>
+                <div className="grid grid-cols-4 gap-4">
+                  {category.technologies.map((tech) => (
+                    <div key={tech.name} className="flex flex-col items-center">
+                      <img src={tech.icon} alt={tech.name} className="h-8 mb-2" />
+                      <span className="text-xs text-gray-500">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ad883d6937367c5a2b_670621f07cc67b505fc3eb22_Apple_iOS_logo%25201.svg" alt="iOS" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">iOS</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ad69b1360653d9d86b_6704dd0be6501c1451081a29_logo-react-svgrepo-com%25201.svg" alt="React Native" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">React Native</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949aeba4b046a938d9426_66fe93e4b25e3d5286729b56_image%2520115.svg" alt="Flutter" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Flutter</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Frontend Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">Frontend Developers</h3>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a5b9e1eff9a1d3da09_6706297d85f16a427e3e6be0_angular_logo.svg.svg" alt="Angular" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Angular</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ad69b1360653d9d86b_6704dd0be6501c1451081a29_logo-react-svgrepo-com%25201.svg" alt="React Native" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">React.js</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ae6661ce9bbe57e85a_66fe93eeddf5ee9b84352c2d_image%2520116.svg" alt="React" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">NextJS</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dc6208a8fb423d77fb19_Group%20(1).svg" alt="Vue" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Vue</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Back-End Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">Back-End Developers</h3>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949abc032e07710780513_670622d5975b419ee4f5b0b0_firebase-svgrepo-com%25201.svg" alt="Firebase" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Firebase</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ac5b705cda9d7a3c4d_67062273e180bf664baff4fd_nodejs-logo-svgrepo-com%25201.svg" alt="Node.js" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Node.js</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a5edbfe289d2294c18_6706294d8755a96f4cec0de6_laravel-wordmark-1%25201.svg" alt="Laravel" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Laravel</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dcd99d3e7d527d33cb38_java%201%20(1).svg" alt="Django" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Java</span>
-              </div>
-            </div>
-          </div>
-
-          {/* CMS & E-Commerce Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">CMS & E-Commerce Developers</h3>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a112a05875201c934e_676551817ac04b208afe7a12_Symbol.svg.svg" alt="Shopify" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Shopify</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dcb516b641af20bf23d2_Frame%201272628620.svg" alt="WooCommerce" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">WooCommerce</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799db07e9704c5e19cdb55e_Group.svg" alt="WordPress" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">WordPress</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9d4b1d776a61be1e5_670626878755a96f4ce92d08_webflow-svgrepo-com%25201.svg" alt="Webflow" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Webflow</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Cloud & DevOps Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">Cloud & DevOps Developers</h3>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ac6661ce9bbe57e66f_6706229c3244b7eedceccc1d_google-cloud-svgrepo-com%25201.svg" alt="GCP" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">GCP</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a47d4f99f6ec702e66_6709102a45c7197dfd9f2e44_image.svg" alt="AWS" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">AWS</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a894360f4b4c9fb932_670626f9e448c33db52573bc_Microsoft_Azure%25201.svg" alt="Azure" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Azure</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949ace300fe3c5cdc3c8a_67062284e3f1d0864819556d_Layer_1.svg" alt="Kubernetes" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Kubernetes</span>
-              </div>
-            </div>
-          </div>
-
-          {/* AI Developers */}
-          <div className="bg-white rounded-lg p-6 mb-6">
-            <h3 className="text-black text-center font-medium mb-8">AI Developers</h3>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a9a75dc198b9989ea5_670626f0e35b6cf9d19048b7_whisper-ai-logo-vector%25201.svg" alt="Whisper" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Whisper</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/676949a7bf1c60d85e6431b2_670627121cae83f1534aa87e_langchain-seeklogo%25201.svg" alt="LangChain" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">LangChain</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/6799dd56bb81275ca46db3f4_bubble_symbol.svg.svg" alt="Chatgpt" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">Chatgpt</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src="https://cdn.prod.website-files.com/6769356e3387b84fd1b7673a/677bc6f0345804dec4dd3a95_Frame%201272628614.svg" alt="Midjourney" className="h-8 mb-2" />
-                <span className="text-xs text-gray-500">AI Engineer</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+    
+         
 
       {/* Partner With Unico Section */}
       <section className="py-16 px-4 bg-white">
@@ -337,12 +251,12 @@ export default function SoftwareDevelopersPage() {
               <h3 className="text-2xl text-blue-500 font-bold">Have a project in mind?</h3>
               <p className="text-xl font-semibold">Let's Connect</p>
             </div>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full flex items-center mt-4 md:mt-0">
+            <Link href="/contact" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full flex items-center mt-4 md:mt-0">
               Get in touch 
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -426,23 +340,7 @@ export default function SoftwareDevelopersPage() {
       </section>
     
 
-      {/* CTA Section */}
-      <section className="py-12 px-4 md:px-8 lg:px-16 bg-blue-50">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
-              Have a project in mind?
-            </h2>
-            <p className="text-lg font-semibold">Let's Connect</p>
-          </div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full flex items-center mt-4 md:mt-0">
-            Get in touch
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </button>
-        </div>
-      </section>
+      
 
      
     </div>
