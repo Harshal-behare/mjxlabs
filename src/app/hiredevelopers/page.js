@@ -16,10 +16,22 @@ export default function SoftwareDevelopersPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-2 text-white">
             Hire <span className="text-blue-500">Software Developers</span> As Per Your Need
           </h1>
-          <p className="text-gray-400 mt-4 mb-6 text-sm md:text-base">
+          <p className="text-gray-400 mt-4 mb-12 text-sm md:text-base">
             Hire Certified Developers To Build Scalable, Secure And Customized Applications That Meet Your Business
             Needs
           </p>
+          <div className="flex flex-col md:flex-row items-center justify-between bg-black py-4">
+            <div>
+              <h3 className="text-2xl text-blue-500 font-bold">Have a project in mind?</h3>
+              <p className="text-xl font-semibold text-white">Let's Connect</p>
+            </div>
+            <Link href="/contact" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full flex items-center mt-4 md:mt-0">
+              Get in touch 
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
         </div>
         <img src="/Hire Developer.png" alt="React" className="h-1/2 w-1/2" />
         
@@ -28,7 +40,7 @@ export default function SoftwareDevelopersPage() {
       {/* Why Choose Section */}
       <section className="py-12 px-4 md:px-8 lg:px-16 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">
-          Why Choose Unico Connect For Your Project?
+          Why Choose MJX Labs For Your Project?
         </h2>
         <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
           We Design Interactive Websites And Apps To Delight Your Users, Build Brand Trust And Improve Your Business Success.
@@ -193,7 +205,7 @@ export default function SoftwareDevelopersPage() {
       {/* Partner With Unico Section */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-12">Partner With Unico Connect For Seamless Development</h2>
+          <h2 className="text-2xl font-bold text-center mb-12">Partner With MJX Labs For Seamless Development</h2>
           
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             {/* Step 1 */}
@@ -338,11 +350,6 @@ export default function SoftwareDevelopersPage() {
           </div>
         </div>
       </section>
-    
-
-      
-
-     
     </div>
   );
 }

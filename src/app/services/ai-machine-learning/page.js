@@ -234,14 +234,23 @@ export default function AIServicesPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Tech Stack</h2>
         
         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 items-center justify-items-center">
-          {["OpenAI", "Python", "React", "TensorFlow", "PyTorch", "Node.js", "Firebase", "AWS", "GCP", "Azure"].map((tech, index) => (
+          {[
+            {name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"},
+            {name: "Python", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"},
+            {name: "React", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"},
+            {name: "TensorFlow", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"},
+            {name: "PyTorch", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"},
+            {name: "Node.js", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"},
+            {name: "Firebase", logo: "https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg"},
+            {name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"},
+            {name: "GCP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg"},
+            {name: "Azure", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"}
+          ].map((tech, index) => (
             <div key={index} className="flex flex-col items-center justify-center p-4 bg-gray-900 rounded-lg w-full">
               <div className="w-12 h-12 bg-gray-800 rounded-full mb-2 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2H5z" />
-                </svg>
+                <img src={tech.logo} alt={tech.name} className="w-8 h-8 object-contain" />
               </div>
-              <span className="text-xs text-center">{tech}</span>
+              <span className="text-xs text-center">{tech.name}</span>
             </div>
           ))}
         </div>

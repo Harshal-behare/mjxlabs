@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function FrontendDevelopmentPage() {
   return (
@@ -248,15 +249,20 @@ export default function FrontendDevelopmentPage() {
         
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 items-center justify-items-center">
           {[
-            "JavaScript", "HTML/CSS", "Tailwind", "React", "Next.js", "Angular", "Vue.js", "Node.js"
+            {name: "JavaScript", logo: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"},
+            {name: "HTML/CSS", logo: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"},
+            {name: "Tailwind", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"},
+            {name: "React", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"},
+            {name: "Next.js", logo: "https://assets.vercel.com/image/upload/v1662134459/nextjs/Icon_light_background.png"},
+            {name: "Angular", logo: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"},
+            {name: "Vue.js", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"},
+            {name: "Node.js", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"}
           ].map((tech, index) => (
             <div key={index} className="flex flex-col items-center justify-center p-4 bg-gray-900 rounded-lg w-full">
               <div className="w-12 h-12 bg-gray-800 rounded-full mb-2 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2H5z" />
-                </svg>
+                <img src={tech.logo} alt={tech.name} className="w-8 h-8 object-contain" />
               </div>
-              <span className="text-xs text-center">{tech}</span>
+              <span className="text-xs text-center">{tech.name}</span>
             </div>
           ))}
         </div>
@@ -268,12 +274,12 @@ export default function FrontendDevelopmentPage() {
           <h2 className="text-2xl font-bold text-blue-400 mb-1">Have a project in mind?</h2>
           <p className="text-lg font-medium">Let's Connect</p>
         </div>
-        <button className="mt-6 md:mt-0 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center">
+        <Link href="/contact" className="mt-6 md:mt-0 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center">
           Get in touch
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
-        </button>
+        </Link>
       </section>
     </div>
   );
