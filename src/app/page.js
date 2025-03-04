@@ -9,12 +9,13 @@ import BlogsSection from "./blog/BlogSectionForHome";
 export default function Home() {
   const clients = [
     { name: "AimFitness", logo: "/Clients/logo.png", demo: "" },
-    { name: "Microsoft", logo: "/Clients/logo2.jpeg", demo: "https://microsoft.com" },
-    { name: "Amazon", logo: "/Clients/image.png", demo: "https://amazon.com" },
-    { name: "IBM", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
-    { name: "Google", logo: "/Clients/BombayForum.jpg", demo: ""},
-    { name: "Facebook", logo: "/Clients/PuneExpress.jpg", demo: ""},
-    { name: "Apple", logo: "/Clients/birdEarner.png", demo: ""}
+    { name: "Ministry of Defence", logo: "/Clients/logo2.jpeg", demo: "https://microsoft.com" },
+    { name: "Vibe N Venture", logo: "/Clients/image.png", demo: "https://amazon.com" },
+    { name: "Pure Technology", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
+    { name: "Bombay Forum", logo: "/Clients/BombayForum.jpg", demo: ""},
+    { name: "Pune Express", logo: "/Clients/PuneExpress.jpg", demo: ""},
+    { name: "Bird Earner", logo: "/Clients/birdEarner.png", demo: ""},
+    { name: "Alchemy Events", logo: "/Clients/alchemy.jpg", demo: ""}
     
   ];
 
