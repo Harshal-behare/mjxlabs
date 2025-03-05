@@ -2,49 +2,16 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import WhatsAppButton from './components/WhatsAppButton';
 import BlogsSection from "./blog/BlogSectionForHome";
+import ClientSection from './components/ClientSection';
 
 export default function Home() {
-  const clients = [
-    { name: "AimFitness", logo: "/Clients/logo.png", demo: "" },
-    { name: "Ministry of Defence", logo: "/Clients/logo2.jpeg", demo: "https://microsoft.com" },
-    { name: "Vibe N Venture", logo: "/Clients/image.png", demo: "https://amazon.com" },
-    { name: "Pure Technology", logo: "/Clients/logo3.png", demo: "https://ibm.com" },
-    { name: "Bombay Forum", logo: "/Clients/BombayForum.jpg", demo: ""},
-    { name: "Pune Express", logo: "/Clients/PuneExpress.jpg", demo: ""},
-    { name: "Bird Earner", logo: "/Clients/birdEarner.png", demo: ""},
-    { name: "Alchemy Events", logo: "/Clients/alchemy.jpg", demo: ""}
-    
-  ];
-
-  const marqueeRef = useRef(null);
-
-  useEffect(() => {
-    const marquee = marqueeRef.current;
-    if (!marquee) return;
-
-    const clone = marquee.cloneNode(true);
-    marquee.parentNode.appendChild(clone);
-
-    const totalWidth = marquee.scrollWidth;
-    const duration = totalWidth / 50;
-
-    marquee.style.animation = `marquee ${duration}s linear infinite`;
-    clone.style.animation = `marquee ${duration}s linear infinite`;
-
-    return () => {
-      marquee.style.animation = '';
-      clone.style.animation = '';
-    };
-  }, []);
-
   return (
     <>
       <div className="flex flex-col items-start bg-black justify-center min-h-screen p-8 pb-12 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-
-        <div className=" flex items-center justify-center bg-black text-white p-20 pl-0">
+        <div className="flex items-center justify-center bg-black text-white p-20 pl-0">
           <div className="max-w-4xl mx-auto p-2">
             <div className="flex flex-col md:flex-row items-center">
               <div className="relative inset-0 z-0">
@@ -81,47 +48,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Trusted Clients Section */}
-        <div className="mt-16 w-full overflow-hidden">
-          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Trusted By Industry Leaders</h2>
-          <div className="relative w-full h-32 overflow-hidden">
-            <style jsx>{`
-              @keyframes marquee {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-              }
-              .marquee-container {
-                display: flex;
-                width: 200%;
-                animation: marquee 20s linear infinite;
-              }
-              .marquee-item {
-                flex: 0 0 auto;
-                margin: 0 2rem;
-              }
-            `}</style>
-            <div className="marquee-container" ref={marqueeRef}>
-              {[...clients, ...clients].map((client, index) => (
-                <a
-                  key={index}
-                  href={client.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="marquee-item p-6 bg-gray-900/50 backdrop-blur-lg rounded-xl border border-gray-800/50 hover:scale-105 transition-transform duration-300"
-                >
-                  <Image 
-                    src={client.logo} 
-                    alt={client.name} 
-                    width={120} 
-                    height={40} 
-                    className="w-full h-auto"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Client Section */}
+        <ClientSection />
 
+        {/* Blog Section */}
         <BlogsSection />
 
         <WhatsAppButton />
