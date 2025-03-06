@@ -28,6 +28,11 @@ const BlogPostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  status: {
+    type: String,
+    enum: ['draft', 'published'],
+    default: 'draft'
+  }
 });
 
 // Only compile the model if it hasn't been compiled before
@@ -52,10 +57,12 @@ async function connectToDatabase() {
 }
 
 // GET all blog posts
-export async function GET() {
+export async function GET(request) {
   try {
     await connectToDatabase();
-    const posts = await BlogPost.find({}).sort({ timestamp: -1 });
+    
+    // Get all published posts
+    const posts = await BlogPost.find({ status: 'published' }).sort({ timestamp: -1 });
     
     return NextResponse.json({ success: true, data: posts }, { status: 200 });
   } catch (error) {
@@ -86,6 +93,7 @@ export async function POST(request) {
       author: data.author,
       imageURL: data.imageURL || '',
       timestamp: new Date(),
+      status: 'published'
     });
     
     await newPost.save();
@@ -101,4 +109,4 @@ export async function POST(request) {
       { status: 500 }
     );
   }
-} 
+}

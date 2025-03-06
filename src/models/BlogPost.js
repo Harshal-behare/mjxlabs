@@ -23,6 +23,11 @@ const BlogPostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  // All posts are considered published by default
+  createdBy: {
+    type: String,
+    required: true
+  }
 });
 
-export default mongoose.models.BlogPost || mongoose.model('BlogPost', BlogPostSchema); 
+export default mongoose.models.BlogPost || mongoose.model('BlogPost', BlogPostSchema);

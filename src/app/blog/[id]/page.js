@@ -14,6 +14,21 @@ export default function BlogPostDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [deleting, setDeleting] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Check if user is admin
+  useEffect(() => {
+    const checkAdmin = async () => {
+      try {
+        const response = await axios.get('/api/auth/check-admin');
+        setIsAdmin(response.data.isAdmin);
+      } catch (err) {
+        console.error('Error checking admin status:', err);
+        setIsAdmin(false);
+      }
+    };
+    checkAdmin();
+  }, []);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -109,23 +124,25 @@ export default function BlogPostDetail() {
               <FaArrowLeft className="mr-2" />
               Back to Blog
             </Link>
-            <div className="flex items-center space-x-4">
-              <Link 
-                href={`/blog/edit/${id}`} 
-                className="flex items-center px-4 py-2 bg-gray-900 rounded-full text-gray-300 hover:text-white transition-colors duration-300"
-              >
-                <FaEdit className="mr-2" />
-                Edit
-              </Link>
-              <button 
-                onClick={handleDelete} 
-                disabled={deleting}
-                className="flex items-center px-4 py-2 bg-red-500/10 rounded-full text-red-400 hover:text-red-300 transition-colors duration-300"
-              >
-                <FaTrash className="mr-2" />
-                {deleting ? 'Deleting...' : 'Delete'}
-              </button>
-            </div>
+            {isAdmin && (
+              <div className="flex items-center space-x-4">
+                <Link 
+                  href={`/blog/edit/${id}`} 
+                  className="flex items-center px-4 py-2 bg-gray-900 rounded-full text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <FaEdit className="mr-2" />
+                  Edit
+                </Link>
+                <button 
+                  onClick={handleDelete} 
+                  disabled={deleting}
+                  className="flex items-center px-4 py-2 bg-red-500/10 rounded-full text-red-400 hover:text-red-300 transition-colors duration-300"
+                >
+                  <FaTrash className="mr-2" />
+                  {deleting ? 'Deleting...' : 'Delete'}
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Article */}
@@ -150,6 +167,7 @@ export default function BlogPostDetail() {
               <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                   {post.title}
+
                 </h1>
 
                 <div className="flex flex-wrap items-center gap-6 mb-12 text-gray-400">
@@ -194,4 +212,4 @@ export default function BlogPostDetail() {
       </div>
     </div>
   );
-} 
+}

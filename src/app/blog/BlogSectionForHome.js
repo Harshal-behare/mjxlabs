@@ -18,8 +18,9 @@ const BlogsSection = () => {
       try {
         setLoading(true);
         const response = await axios.get('/api/blogs');
-        // Get only the latest 3 posts (they're already sorted by timestamp in the API)
-        setPosts(response.data.data.slice(0, 3));
+        // Get only the latest 3 published posts
+        const publishedPosts = response.data.data.filter(post => post.status === 'published');
+        setPosts(publishedPosts.slice(0, 3));
         setLoading(false);
       } catch (err) {
         console.error('Error fetching blog posts:', err);

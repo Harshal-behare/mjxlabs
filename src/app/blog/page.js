@@ -11,6 +11,21 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Check if user is admin
+  useEffect(() => {
+    const checkAdmin = async () => {
+      try {
+        const response = await axios.get('/api/auth/check-admin');
+        setIsAdmin(response.data.isAdmin);
+      } catch (err) {
+        console.error('Error checking admin status:', err);
+        setIsAdmin(false);
+      }
+    };
+    checkAdmin();
+  }, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -36,7 +51,7 @@ export default function BlogPage() {
     return `${readTime} min${readTime > 1 ? 's' : ''}`;
   };
 
-  const filteredPosts = posts.filter(post =>
+  const filteredPosts = posts.filter(post => 
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.author.toLowerCase().includes(searchTerm.toLowerCase())
@@ -89,13 +104,15 @@ export default function BlogPage() {
               />
               <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
-            <Link 
-              href="/blog/new" 
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-medium transition-all duration-300 flex items-center gap-2 hover:gap-3"
-            >
-              Create Post
-              <FaArrowRight className="text-sm" />
-            </Link>
+            {isAdmin && (
+              <Link 
+                href="/blog/new" 
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-medium transition-all duration-300 flex items-center gap-2 hover:gap-3"
+              >
+                Create Post
+                <FaArrowRight className="text-sm" />
+              </Link>
+            )}
           </div>
         </div>
 
@@ -142,7 +159,7 @@ export default function BlogPage() {
                     )}
                     <div className="absolute top-4 right-4">
                       <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm backdrop-blur-md">
-                        Blog
+                        {post.status === 'draft' ? 'Pending' : 'Published'}
                       </span>
                     </div>
                   </div>

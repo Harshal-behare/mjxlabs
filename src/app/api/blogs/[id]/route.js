@@ -24,6 +24,11 @@ const BlogPostSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  status: {
+    type: String,
+    enum: ['draft', 'published'],
+    default: 'draft'
+  },
   timestamp: {
     type: Date,
     default: Date.now,
@@ -65,7 +70,7 @@ export async function GET(request, { params }) {
       );
     }
     
-    const post = await BlogPost.findById(id);
+    const post = await BlogPost.findOne({ _id: id, status: 'published' });
     
     if (!post) {
       return NextResponse.json(
@@ -102,7 +107,34 @@ export async function PUT(request, { params }) {
       );
     }
     
-    // Validate required fields
+    // For status update, we only need the status field
+    if (data.status !== undefined) {
+      if (!['draft', 'published'].includes(data.status)) {
+        return NextResponse.json(
+          { success: false, error: 'Invalid status value' },
+          { status: 400 }
+        );
+      }
+      const updatedPost = await BlogPost.findByIdAndUpdate(
+        id,
+        { status: data.status },
+        { new: true, runValidators: true }
+      );
+      
+      if (!updatedPost) {
+        return NextResponse.json(
+          { success: false, error: 'Blog post not found' },
+          { status: 404 }
+        );
+      }
+      
+      return NextResponse.json({ 
+        success: true, 
+        data: updatedPost 
+      });
+    }
+
+    // For full post update, validate required fields
     if (!data.title || !data.content || !data.author) {
       return NextResponse.json(
         { success: false, error: 'Missing required fields' },
@@ -117,6 +149,7 @@ export async function PUT(request, { params }) {
         content: data.content,
         author: data.author,
         imageURL: data.imageURL || '',
+        status: data.status || 'draft',
       },
       { new: true, runValidators: true }
     );
@@ -175,4 +208,4 @@ export async function DELETE(request, { params }) {
       { status: 500 }
     );
   }
-} 
+}

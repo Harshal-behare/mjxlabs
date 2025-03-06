@@ -114,6 +114,7 @@ export default function Header() {
         <Link href="/blog" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/blog') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Blog</Link>
         <Link href="/about" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/about') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>About Us</Link>
         <Link href="/pricing" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/pricing') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Pricing</Link>
+        <Link href="/login" className={`px-3 py-2 rounded-lg hover:bg-gray-800/50 transition-colors ${isActive('/login') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Login</Link>
         <Link href="/contact" className={`px-2 py-1 rounded-lg bg-gradient-to-r from-blue-700 to-blue-400 transition-colors ${isActive('/contact') ? 'text-blue-800 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Contact</Link>
       </nav>
       <Link href="/contact" className={`md:hidden px-3 py-2 rounded-lg bg-gradient-to-r from-blue-700 to-blue-400 transition-colors ${isActive('/contact') ? 'text-blue-800 glow-blue' : 'text-gray-300 hover:text-blue-600'}`}>Contact</Link>
@@ -184,6 +185,9 @@ export default function Header() {
             </li>
             <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
               <Link href="/pricing" className={`block ${isActive('/pricing') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Pricing</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-800/50 transition-colors">
+              <Link href="/login" className={`block ${isActive('/login') ? 'text-blue-500 glow-blue' : 'text-gray-300 hover:text-white'}`}>Login</Link>
             </li>
             
           </ul>
