@@ -54,7 +54,7 @@ export default function NewBlogPost() {
 
     try {
       await axios.post('/api/blogs', formData);
-      router.push('/blog');
+      router.push('/admin/dashboard');
     } catch (err) {
       console.error('Error creating blog post:', err);
       setError('Failed to create blog post: ' + (err.response?.data?.error || err.message));
@@ -209,4 +209,4 @@ export default function NewBlogPost() {
       </div>
     </div>
   );
-} 
+}
